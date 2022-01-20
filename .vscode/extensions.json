@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"amatiasq.sort-imports",
+		"dbaeumer.vscode-eslint",
+		"donjayamanne.githistory",
+		"esbenp.prettier-vscode",
+		"eamodio.gitlens",
+		"eg2.vscode-npm-script",
+		"christian-kohler.npm-intellisense"
+	]
+}
