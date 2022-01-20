@@ -10,15 +10,16 @@ import backgroundImage from "../../assets/images/background.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
-  background: Colors.PRIMARY,
+  background: Colors.blackBackground,
   padding: theme.spacing(7, 3, 3, 3),
+  position: "relative",
 }));
 
 const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
   backgroundImage: `url(${backgroundImage})`,
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  minHeight: "90vh",
+  minHeight: "86vh",
 }));
 
 const SelfContainer = CustomStyled(Box)(({ theme }) => ({
@@ -41,8 +42,8 @@ const Title = CustomStyled(Typography)(({ theme }) => ({
 const Icon = CustomStyled(IconButton)(({ theme }) => ({
   "& svg": {
     color: Colors.SECONDARY,
-    height: "25px",
-    width: "25px",
+    height: "28px",
+    width: "28px",
   },
 }));
 
@@ -58,9 +59,12 @@ export default function BackgroundLayout({
           <Box
             paddingX={"100px"}
             width="100%"
-            marginTop="-20px"
             display="flex"
             justifyContent={"space-between"}
+            position={"absolute"}
+            top={20}
+            left={0}
+            zIndex={1}
           >
             <Box>
               <SelfContainer>

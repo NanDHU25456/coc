@@ -8,12 +8,11 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
+  height: "86vh",
   width: "100%",
 }));
 
 const ImageContaier = CustomStyled(Box)(({ theme }) => ({
-  height: "270px",
   width: "70%",
   "& img": {
     height: "100%",
