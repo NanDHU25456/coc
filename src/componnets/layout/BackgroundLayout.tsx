@@ -53,7 +53,6 @@ export default function BackgroundLayout({
           <Box
             paddingX={"100px"}
             width="100%"
-            height="100px"
             marginTop="-20px"
             display="flex"
             justifyContent={"space-between"}
