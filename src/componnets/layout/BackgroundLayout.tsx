@@ -2,6 +2,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { PropsWithChildren } from "react";
 
+import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullWidthPage from "./FullWidthPage";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
@@ -25,6 +26,10 @@ const SelfContainer = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
   marginRight: theme.spacing(3),
   height: "fit-content",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignItems: "center",
 }));
 
 const Title = CustomStyled(Typography)(({ theme }) => ({
@@ -59,6 +64,7 @@ export default function BackgroundLayout({
           >
             <Box>
               <SelfContainer>
+                <CatIcon />
                 <Title variant="h2">Cats on crack</Title>
               </SelfContainer>
             </Box>
