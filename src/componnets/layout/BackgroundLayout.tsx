@@ -1,4 +1,10 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { PropsWithChildren } from "react";
 
@@ -52,39 +58,44 @@ interface BackgroundLayoutProps {}
 export default function BackgroundLayout({
   children,
 }: PropsWithChildren<{}> & BackgroundLayoutProps) {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <FullWidthPage>
       <Container>
         <BackgroundContainer>
-          <Box
-            paddingX={"100px"}
-            width="100%"
-            display="flex"
-            justifyContent={"space-between"}
-            position={"absolute"}
-            top={20}
-            left={0}
-            zIndex={1}
-          >
-            <Box>
-              <SelfContainer>
-                <CatIcon />
-                <Title variant="h2">Cats on crack</Title>
-              </SelfContainer>
+          {isLargeScreen && (
+            <Box
+              paddingX={"100px"}
+              width="100%"
+              display="flex"
+              justifyContent={"space-between"}
+              position={"absolute"}
+              top={20}
+              left={0}
+              zIndex={1}
+            >
+              <Box>
+                <SelfContainer>
+                  <CatIcon />
+                  <Title variant="h2">Cats on crack</Title>
+                </SelfContainer>
+              </Box>
+              <Box display="flex" flexDirection={"row"}>
+                <SelfContainer>
+                  <Icon>
+                    <GameIcon />
+                  </Icon>
+                </SelfContainer>
+                <SelfContainer>
+                  <Icon>
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </Icon>
+                </SelfContainer>
+              </Box>
             </Box>
-            <Box display="flex" flexDirection={"row"}>
-              <SelfContainer>
-                <Icon>
-                  <GameIcon />
-                </Icon>
-              </SelfContainer>
-              <SelfContainer>
-                <Icon>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Icon>
-              </SelfContainer>
-            </Box>
-          </Box>
+          )}
           {children}
         </BackgroundContainer>
       </Container>

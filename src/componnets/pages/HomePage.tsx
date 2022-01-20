@@ -10,6 +10,9 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   alignItems: "center",
   height: "86vh",
   width: "100%",
+  [theme.breakpoints.down("md")]: {
+    minHeight: "100vh",
+  },
 }));
 
 const ImageContaier = CustomStyled(Box)(({ theme }) => ({
