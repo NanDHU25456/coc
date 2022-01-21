@@ -3,7 +3,7 @@ import BackgroundLayout, {
 } from "../layout/BackgroundLayout";
 import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import ComingSoon from "../../assets/images/coming-soon-gif.gif";
@@ -77,20 +77,6 @@ export default function HomePage() {
       console.log("error..", error);
     }
   }, [playing]);
-
-  useEffect(() => {
-    window.onload = () => {
-      // eslint-disable-next-line no-restricted-globals
-      var r = confirm("Would You Like To AutoPlay Music?");
-      console.log("value...", r);
-
-      if (r === true) {
-        console.log("true");
-
-        toggle();
-      }
-    };
-  }, [toggle]);
 
   return (
     <Box>
