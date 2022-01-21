@@ -41,7 +41,7 @@ const ImageContaier = CustomStyled(Box)(({ theme }) => ({
 
 const Icon = CustomStyled(IconButton)(({ theme }) => ({
   position: "absolute",
-  bottom: 0,
+  bottom: "40px",
   right: "80px",
   background: Colors.PRIMARY,
   padding: theme.spacing(1),
@@ -84,7 +84,7 @@ export default function HomePage() {
           <Container>
             <Box
               position="absolute"
-              top={"24px"}
+              top={"54px"}
               left={"12px"}
               display="flex"
               justifyContent={"space-between"}

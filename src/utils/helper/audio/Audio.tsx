@@ -8,10 +8,12 @@ const useAudio = (url: string): [boolean, () => void] => {
 
   useEffect(() => {
     console.log("priniting", playing);
-
-    audio.loop = true;
-
-    playing ? audio.play() : audio.pause();
+    if (playing) {
+      audio.loop = true;
+      audio.play();
+    } else {
+      audio.pause();
+    }
   }, [playing, audio]);
 
   useEffect(() => {

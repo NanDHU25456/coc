@@ -16,6 +16,7 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   position: "relative",
   height: "100vh",
   width: "100vw",
+  overflow: "hidden",
 }));
 
 export const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
@@ -71,9 +72,9 @@ export default function BackgroundLayout({
             display="flex"
             justifyContent={"space-between"}
             paddingX={"100px"}
-            position="absolute"
-            top={0}
-            left={0}
+            // position="absolute"
+            // top={0}
+            // left={0}
             width="100%"
           >
             <Box>
@@ -95,7 +96,6 @@ export default function BackgroundLayout({
               </SelfContainer>
               <SelfContainer
                 onClick={() => {
-                  console.log("clicking...");
                   window.open("https://twitter.com/catsoncrack_");
                 }}
                 height={"55px"}
