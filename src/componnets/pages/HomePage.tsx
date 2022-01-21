@@ -3,16 +3,15 @@ import BackgroundLayout, {
 } from "../layout/BackgroundLayout";
 import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import ComingSoon from "../../assets/images/coming-soon-gif.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
-import React from "react";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import pause from "../../assets/images/icons/pause.svg";
 import play from "../../assets/images/icons/play.svg";
-import useAudio from "../../utils/helper/audio/Audio";
 
 const catAudio = require("../../assets/audio/cat-audio.mp4");
 
@@ -58,12 +57,46 @@ const Icon = CustomStyled(IconButton)(({ theme }) => ({
 }));
 
 export default function HomePage() {
-  const [playing, toggle] = useAudio(catAudio);
+  const [playing, setPlaying] = useState(false);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const audioRef = useRef<any>(null);
+
+  const toggle = useCallback(() => {
+    try {
+      if (audioRef && audioRef.current) {
+        // console.log("playing..", playing);
+        if (!playing) {
+          audioRef.current.play();
+        } else {
+          audioRef.current.pause();
+        }
+        setPlaying(!playing);
+      }
+    } catch (error) {
+      console.log("error..", error);
+    }
+  }, [playing]);
+
+  useEffect(() => {
+    window.onload = () => {
+      // eslint-disable-next-line no-restricted-globals
+      var r = confirm("Would You Like To AutoPlay Music?");
+      console.log("value...", r);
+
+      if (r === true) {
+        console.log("true");
+
+        toggle();
+      }
+    };
+  }, [toggle]);
 
   return (
-    <>
+    <Box>
+      <audio ref={audioRef} id="audio" autoPlay loop>
+        <source src={catAudio} type="audio/mpeg" />
+      </audio>
       {isLargeScreen ? (
         <BackgroundLayout>
           <Container>
@@ -127,6 +160,6 @@ export default function HomePage() {
           </Container>
         </MobileBackgroundContainer>
       )}
-    </>
+    </Box>
   );
 }
