@@ -8,6 +8,7 @@ import FullWidthPage from "./FullWidthPage";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
 import backgroundImage from "../../assets/images/background.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import mobileBackground from "../../assets/images/background-mobile.png";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
@@ -26,6 +27,15 @@ export const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
   position: "relative",
 }));
 
+export const MobileBackgroundContainer = CustomStyled(Box)(({ theme }) => ({
+  backgroundImage: `url(${mobileBackground})`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  height: "100%",
+  width: "100%",
+  position: "relative",
+}));
+
 const SelfContainer = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
   display: "flex",
@@ -33,6 +43,7 @@ const SelfContainer = CustomStyled(Box)(({ theme }) => ({
   marginRight: theme.spacing(2),
   justifyContent: "center",
   alignItems: "center",
+  cursor: "pointer",
 }));
 
 const Icon = CustomStyled(IconButton)(({ theme }) => ({
@@ -82,8 +93,20 @@ export default function BackgroundLayout({
                   <GameIcon />
                 </Icon>
               </SelfContainer>
-              <SelfContainer height={"55px"} width="55px" padding={1}>
-                <Icon>
+              <SelfContainer
+                onClick={() => {
+                  console.log("clicking...");
+                  window.open("https://twitter.com/catsoncrack_");
+                }}
+                height={"55px"}
+                width="55px"
+                padding={1}
+              >
+                <Icon
+                  onClick={() =>
+                    window.open("https://twitter.com/catsoncrack_")
+                  }
+                >
                   <FontAwesomeIcon icon={faTwitter} />
                 </Icon>
               </SelfContainer>

@@ -1,5 +1,5 @@
 import BackgroundLayout, {
-  BackgroundContainer,
+  MobileBackgroundContainer,
 } from "../layout/BackgroundLayout";
 import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
@@ -76,7 +76,7 @@ export default function HomePage() {
           </Container>
         </BackgroundLayout>
       ) : (
-        <BackgroundContainer
+        <MobileBackgroundContainer
           overflow={"hidden !important"}
           height={"100vh !important"}
           width="100vw !important"
@@ -100,7 +100,11 @@ export default function HomePage() {
                 <Icon sx={{ marginRight: "10px" }}>
                   <GameIcon />
                 </Icon>
-                <Icon>
+                <Icon
+                  onClick={() =>
+                    window.open("https://twitter.com/catsoncrack_")
+                  }
+                >
                   <FontAwesomeIcon icon={faTwitter} />
                 </Icon>
               </Box>
@@ -121,7 +125,7 @@ export default function HomePage() {
               <img src={playing ? pause : play} alt="audio" />
             </Icon>
           </Container>
-        </BackgroundContainer>
+        </MobileBackgroundContainer>
       )}
     </>
   );
