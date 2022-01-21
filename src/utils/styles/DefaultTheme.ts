@@ -47,7 +47,7 @@ const DefaultTheme = createTheme({
       main: Colors.SECONDARY,
     },
     background: {
-      default: Colors.blackBackground,
+      default: Colors.PRIMARY,
     },
     customBackground: {
       light: Colors.blackBackground,

@@ -1,10 +1,4 @@
-import {
-  Box,
-  IconButton,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { PropsWithChildren } from "react";
 
@@ -16,41 +10,41 @@ import backgroundImage from "../../assets/images/background.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
-  background: Colors.blackBackground,
-  padding: theme.spacing(7, 3, 3, 3),
+  background: Colors.PRIMARY,
+  padding: theme.spacing(2.2),
   position: "relative",
+  height: "100vh",
+  width: "100vw",
 }));
 
-const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
+export const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
   backgroundImage: `url(${backgroundImage})`,
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  minHeight: "86vh",
+  height: "100%",
+  width: "100%",
+  position: "relative",
 }));
 
 const SelfContainer = CustomStyled(Box)(({ theme }) => ({
-  padding: theme.spacing(2.1),
   background: Colors.PRIMARY,
-  marginRight: theme.spacing(3),
-  height: "fit-content",
   display: "flex",
   flexDirection: "row",
+  marginRight: theme.spacing(2),
   justifyContent: "center",
   alignItems: "center",
-}));
-
-const Title = CustomStyled(Typography)(({ theme }) => ({
-  color: Colors.SECONDARY,
-  textTransform: "uppercase",
-  fontFamily: Fonts.BebasNeue,
 }));
 
 const Icon = CustomStyled(IconButton)(({ theme }) => ({
   "& svg": {
     color: Colors.SECONDARY,
-    height: "28px",
-    width: "28px",
   },
+}));
+
+const Title = CustomStyled(Typography)(({ theme }) => ({
+  color: Colors.SECONDARY,
+  fontFamily: Fonts.BebasNeue,
+  textTransform: "uppercase",
 }));
 
 interface BackgroundLayoutProps {}
@@ -58,44 +52,43 @@ interface BackgroundLayoutProps {}
 export default function BackgroundLayout({
   children,
 }: PropsWithChildren<{}> & BackgroundLayoutProps) {
-  const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
-
   return (
     <FullWidthPage>
       <Container>
         <BackgroundContainer>
-          {isLargeScreen && (
-            <Box
-              paddingX={"100px"}
-              width="100%"
-              display="flex"
-              justifyContent={"space-between"}
-              position={"absolute"}
-              top={20}
-              left={0}
-              zIndex={1}
-            >
-              <Box>
-                <SelfContainer>
-                  <CatIcon />
-                  <Title variant="h2">Cats on crack</Title>
-                </SelfContainer>
-              </Box>
-              <Box display="flex" flexDirection={"row"}>
-                <SelfContainer>
-                  <Icon>
-                    <GameIcon />
-                  </Icon>
-                </SelfContainer>
-                <SelfContainer>
-                  <Icon>
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </Icon>
-                </SelfContainer>
-              </Box>
+          <Box
+            display="flex"
+            justifyContent={"space-between"}
+            paddingX={"100px"}
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"
+          >
+            <Box>
+              <SelfContainer
+                height={"55px"}
+                sx={{ padding: "11px 20px 11px 5px" }}
+              >
+                <CatIcon
+                  style={{ height: "54px", width: "55px", marginRight: 5 }}
+                />
+                <Title variant="h2">cats on Crack</Title>
+              </SelfContainer>
             </Box>
-          )}
+            <Box display="flex">
+              <SelfContainer height={"55px"} width="55px" padding={1}>
+                <Icon>
+                  <GameIcon />
+                </Icon>
+              </SelfContainer>
+              <SelfContainer height={"55px"} width="55px" padding={1}>
+                <Icon>
+                  <FontAwesomeIcon icon={faTwitter} />
+                </Icon>
+              </SelfContainer>
+            </Box>
+          </Box>
           {children}
         </BackgroundContainer>
       </Container>
