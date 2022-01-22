@@ -1,21 +1,14 @@
-import BackgroundLayout, {
-  MobileBackgroundContainer,
-} from "../layout/BackgroundLayout";
 import { Box, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
 import React, { useCallback, useRef, useState } from "react";
 
-import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
-import ComingSoon from "../../assets/images/coming-soon-gif.gif";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import pause from "../../assets/images/icons/pause.svg";
-import play from "../../assets/images/icons/play.svg";
+import DesktopHome from "../home/DesktopHome";
+import HomeOverlay from "../home/HomeOverlay";
+import MobileHome from "../home/MobileHome";
 
-const catAudio = require("../../assets/audio/cat-audio.mp4");
+export const catAudio = require("../../assets/audio/cat-audio.mp4");
 
-const Container = CustomStyled(Box)(({ theme }) => ({
+export const Container = CustomStyled(Box)(({ theme }) => ({
   height: "100%",
   width: "100%",
   display: "flex",
@@ -27,7 +20,7 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   },
 }));
 
-const ImageContaier = CustomStyled(Box)(({ theme }) => ({
+export const ImageContaier = CustomStyled(Box)(({ theme }) => ({
   width: "70%",
   "& img": {
     height: "100%",
@@ -38,7 +31,7 @@ const ImageContaier = CustomStyled(Box)(({ theme }) => ({
   },
 }));
 
-const Icon = CustomStyled(IconButton)(({ theme }) => ({
+export const Icon = CustomStyled(IconButton)(({ theme }) => ({
   position: "absolute",
   bottom: "40px",
   right: "80px",
@@ -58,6 +51,7 @@ const Icon = CustomStyled(IconButton)(({ theme }) => ({
 
 export default function HomePage() {
   const [playing, setPlaying] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(true);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
   const audioRef = useRef<any>(null);
@@ -83,68 +77,17 @@ export default function HomePage() {
       <audio ref={audioRef} id="audio" autoPlay loop>
         <source src={catAudio} type="audio/mpeg" />
       </audio>
+      {showOverlay && (
+        <HomeOverlay
+          showOverlay={showOverlay}
+          setShowOverlay={setShowOverlay}
+          toggle={toggle}
+        />
+      )}
       {isLargeScreen ? (
-        <BackgroundLayout>
-          <Container>
-            <ImageContaier>
-              <img src={ComingSoon} alt="coming-soon" />
-            </ImageContaier>
-            <Icon onClick={() => toggle()} id="cat-play">
-              <img src={playing ? pause : play} alt="audio" />
-            </Icon>
-          </Container>
-        </BackgroundLayout>
+        <DesktopHome toggle={toggle} playing={playing} />
       ) : (
-        <MobileBackgroundContainer
-          overflow={"hidden !important"}
-          height={"100vh !important"}
-          width="100vw !important"
-        >
-          <Container>
-            <Box
-              position="absolute"
-              top={"54px"}
-              left={"12px"}
-              display="flex"
-              justifyContent={"space-between"}
-              width="100%"
-              paddingRight={3}
-            >
-              <Box>
-                <Icon>
-                  <CatIcon />
-                </Icon>
-              </Box>
-              <Box>
-                <Icon sx={{ marginRight: "10px" }}>
-                  <GameIcon />
-                </Icon>
-                <Icon
-                  onClick={() =>
-                    window.open("https://twitter.com/catsoncrack_")
-                  }
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Icon>
-              </Box>
-            </Box>
-            <ImageContaier>
-              <img src={ComingSoon} alt="coming-soon" />
-            </ImageContaier>
-            <Icon
-              sx={{
-                position: "absolute !important",
-                bottom: "24px !important",
-                right: "24px !important",
-                background: Colors.PRIMARY,
-              }}
-              id="cat-play"
-              onClick={() => toggle()}
-            >
-              <img src={playing ? pause : play} alt="audio" />
-            </Icon>
-          </Container>
-        </MobileBackgroundContainer>
+        <MobileHome toggle={toggle} playing={playing} />
       )}
     </Box>
   );
