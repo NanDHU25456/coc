@@ -9,19 +9,24 @@ import play from "../../assets/images/icons/play.svg";
 interface DesktopHomeProps {
   toggle: () => void;
   playing: boolean;
+  showOverlay: boolean;
 }
 
-export default function DesktopHome({ toggle, playing }: DesktopHomeProps) {
+export default function DesktopHome({
+  toggle,
+  playing,
+  showOverlay,
+}: DesktopHomeProps) {
   return (
-    <BackgroundLayout>
-      <Container>
+    <BackgroundLayout showOverlay={showOverlay}>
+      {!showOverlay && (
         <ImageContaier>
           <img src={ComingSoon} alt="coming-soon" />
         </ImageContaier>
-        <Icon onClick={() => toggle()} id="cat-play">
-          <img src={playing ? pause : play} alt="audio" />
-        </Icon>
-      </Container>
+      )}
+      <Icon onClick={() => toggle()} id="cat-play">
+        <img src={playing ? pause : play} alt="audio" />
+      </Icon>
     </BackgroundLayout>
   );
 }

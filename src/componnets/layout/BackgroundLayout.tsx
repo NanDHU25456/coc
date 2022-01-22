@@ -59,59 +59,69 @@ const Title = CustomStyled(Typography)(({ theme }) => ({
   textTransform: "uppercase",
 }));
 
-interface BackgroundLayoutProps {}
+interface BackgroundLayoutProps {
+  showOverlay: boolean;
+}
 
 export default function BackgroundLayout({
   children,
+  showOverlay,
 }: PropsWithChildren<{}> & BackgroundLayoutProps) {
   return (
     <FullWidthPage>
       <Container>
-        <BackgroundContainer>
-          <Box
-            display="flex"
-            justifyContent={"space-between"}
-            paddingX={"100px"}
-            // position="absolute"
-            // top={0}
-            // left={0}
-            width="100%"
-          >
-            <Box>
-              <SelfContainer
-                height={"55px"}
-                sx={{ padding: "11px 20px 11px 5px" }}
-              >
-                <CatIcon
-                  style={{ height: "54px", width: "55px", marginRight: 5 }}
-                />
-                <Title variant="h2">cats on Crack</Title>
-              </SelfContainer>
-            </Box>
-            <Box display="flex">
-              <SelfContainer height={"55px"} width="55px" padding={1}>
-                <Icon>
-                  <GameIcon />
-                </Icon>
-              </SelfContainer>
-              <SelfContainer
-                onClick={() => {
-                  window.open("https://twitter.com/catsoncrack_");
-                }}
-                height={"55px"}
-                width="55px"
-                padding={1}
-              >
-                <Icon
-                  onClick={() =>
-                    window.open("https://twitter.com/catsoncrack_")
-                  }
+        <BackgroundContainer
+          display="flex"
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          {!showOverlay && (
+            <Box
+              display="flex"
+              justifyContent={"space-between"}
+              paddingX={"100px"}
+              position="absolute"
+              top={0}
+              left={0}
+              width="100%"
+            >
+              <Box>
+                <SelfContainer
+                  height={"55px"}
+                  sx={{ padding: "11px 20px 11px 5px" }}
                 >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Icon>
-              </SelfContainer>
+                  <CatIcon
+                    style={{ height: "54px", width: "55px", marginRight: 5 }}
+                  />
+                  <Title variant="h2">cats on Crack</Title>
+                </SelfContainer>
+              </Box>
+              <Box display="flex">
+                <SelfContainer height={"55px"} width="55px" padding={1}>
+                  <Icon>
+                    <GameIcon />
+                  </Icon>
+                </SelfContainer>
+                <SelfContainer
+                  onClick={() => {
+                    window.open("https://twitter.com/catsoncrack_");
+                  }}
+                  height={"55px"}
+                  width="55px"
+                  padding={1}
+                >
+                  <Icon
+                    onClick={() =>
+                      window.open("https://twitter.com/catsoncrack_")
+                    }
+                  >
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </Icon>
+                </SelfContainer>
+              </Box>
             </Box>
-          </Box>
+          )}
+
           {children}
         </BackgroundContainer>
       </Container>

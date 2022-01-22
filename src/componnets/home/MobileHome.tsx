@@ -15,9 +15,14 @@ import play from "../../assets/images/icons/play.svg";
 interface MobileHomeProps {
   toggle: () => void;
   playing: boolean;
+  showOverlay: boolean;
 }
 
-export default function MobileHome({ toggle, playing }: MobileHomeProps) {
+export default function MobileHome({
+  toggle,
+  playing,
+  showOverlay,
+}: MobileHomeProps) {
   return (
     <MobileBackgroundContainer
       overflow={"hidden !important"}
@@ -25,34 +30,41 @@ export default function MobileHome({ toggle, playing }: MobileHomeProps) {
       width="100vw !important"
     >
       <Container>
-        <Box
-          position="absolute"
-          top={"54px"}
-          left={"12px"}
-          display="flex"
-          justifyContent={"space-between"}
-          width="100%"
-          paddingRight={3}
-        >
-          <Box>
-            <Icon>
-              <CatIcon />
-            </Icon>
-          </Box>
-          <Box>
-            <Icon sx={{ marginRight: "10px" }}>
-              <GameIcon />
-            </Icon>
-            <Icon
-              onClick={() => window.open("https://twitter.com/catsoncrack_")}
+        {!showOverlay && (
+          <>
+            <Box
+              position="absolute"
+              top={"24px"}
+              left={"12px"}
+              display="flex"
+              justifyContent={"space-between"}
+              width="100%"
+              paddingRight={3}
             >
-              <FontAwesomeIcon icon={faTwitter} />
-            </Icon>
-          </Box>
-        </Box>
-        <ImageContaier>
-          <img src={ComingSoon} alt="coming-soon" />
-        </ImageContaier>
+              <Box>
+                <Icon>
+                  <CatIcon />
+                </Icon>
+              </Box>
+              <Box>
+                <Icon sx={{ marginRight: "10px" }}>
+                  <GameIcon />
+                </Icon>
+                <Icon
+                  onClick={() =>
+                    window.open("https://twitter.com/catsoncrack_")
+                  }
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </Icon>
+              </Box>
+            </Box>
+            <ImageContaier>
+              <img src={ComingSoon} alt="coming-soon" />
+            </ImageContaier>
+          </>
+        )}
+
         <Icon
           sx={{
             position: "absolute !important",

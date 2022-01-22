@@ -33,7 +33,7 @@ export const ImageContaier = CustomStyled(Box)(({ theme }) => ({
 
 export const Icon = CustomStyled(IconButton)(({ theme }) => ({
   position: "absolute",
-  bottom: "40px",
+  bottom: 0,
   right: "80px",
   background: Colors.PRIMARY,
   padding: theme.spacing(1),
@@ -85,9 +85,17 @@ export default function HomePage() {
         />
       )}
       {isLargeScreen ? (
-        <DesktopHome toggle={toggle} playing={playing} />
+        <DesktopHome
+          toggle={toggle}
+          showOverlay={showOverlay}
+          playing={playing}
+        />
       ) : (
-        <MobileHome toggle={toggle} playing={playing} />
+        <MobileHome
+          toggle={toggle}
+          showOverlay={showOverlay}
+          playing={playing}
+        />
       )}
     </Box>
   );
