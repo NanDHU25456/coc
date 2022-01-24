@@ -1,7 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap");
 
 @font-face {
   font-family: "Bebas Neue";
   font-weight: 400;
   src: url(../../assets/fonts/BebasNeue-Regular.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url(../../assets/fonts/Poppins/Poppins-Regular.ttf) format("ttf");
 }

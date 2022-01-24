@@ -1,6 +1,6 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useState } from "react";
 
 import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -59,6 +59,20 @@ const Title = CustomStyled(Typography)(({ theme }) => ({
   textTransform: "uppercase",
 }));
 
+export const DiscordContainer = CustomStyled(Box)(({ theme }) => ({
+  position: "absolute",
+  background: "rgba(0, 0, 0, 0.6)",
+  padding: theme.spacing(2),
+  top: "60px",
+  right: 0,
+  width: "300px",
+}));
+
+export const DiscordText = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.Poppins,
+  color: Colors.SECONDARY,
+}));
+
 interface BackgroundLayoutProps {
   showOverlay: boolean;
 }
@@ -67,6 +81,8 @@ export default function BackgroundLayout({
   children,
   showOverlay,
 }: PropsWithChildren<{}> & BackgroundLayoutProps) {
+  const [showDiscord, setShowDiscord] = useState(false);
+
   return (
     <FullWidthPage>
       <Container>
@@ -96,9 +112,9 @@ export default function BackgroundLayout({
                   <Title variant="h2">cats on Crack</Title>
                 </SelfContainer>
               </Box>
-              <Box display="flex">
+              <Box position="relative" display="flex">
                 <SelfContainer height={"55px"} width="55px" padding={1}>
-                  <Icon>
+                  <Icon onClick={() => setShowDiscord(!showDiscord)}>
                     <GameIcon />
                   </Icon>
                 </SelfContainer>
@@ -118,6 +134,15 @@ export default function BackgroundLayout({
                     <FontAwesomeIcon icon={faTwitter} />
                   </Icon>
                 </SelfContainer>
+                {showDiscord && (
+                  <DiscordContainer>
+                    <DiscordText variant="body2">
+                      Discord is currently private :P Follow us on twitter and
+                      turn on the push notification so you don’t miss the next
+                      invite.
+                    </DiscordText>
+                  </DiscordContainer>
+                )}
               </Box>
             </Box>
           )}

@@ -1,4 +1,10 @@
 import { Container, Icon, ImageContaier } from "../pages/HomePage";
+import {
+  DiscordContainer,
+  DiscordText,
+  MobileBackgroundContainer,
+} from "../layout/BackgroundLayout";
+import React, { useState } from "react";
 
 import { Box } from "@mui/material";
 import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
@@ -6,8 +12,6 @@ import { Colors } from "../../utils/styles/DefaultTheme";
 import ComingSoon from "../../assets/images/coming-soon-gif.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
-import { MobileBackgroundContainer } from "../layout/BackgroundLayout";
-import React from "react";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import pause from "../../assets/images/icons/pause.svg";
 import play from "../../assets/images/icons/play.svg";
@@ -23,6 +27,8 @@ export default function MobileHome({
   playing,
   showOverlay,
 }: MobileHomeProps) {
+  const [showDiscord, setShowDiscord] = useState(false);
+
   return (
     <MobileBackgroundContainer
       overflow={"hidden !important"}
@@ -46,8 +52,11 @@ export default function MobileHome({
                   <CatIcon />
                 </Icon>
               </Box>
-              <Box>
-                <Icon sx={{ marginRight: "10px" }}>
+              <Box position="relative">
+                <Icon
+                  sx={{ marginRight: "10px" }}
+                  onClick={() => setShowDiscord(!showDiscord)}
+                >
                   <GameIcon />
                 </Icon>
                 <Icon
@@ -57,6 +66,15 @@ export default function MobileHome({
                 >
                   <FontAwesomeIcon icon={faTwitter} />
                 </Icon>
+                {showDiscord && (
+                  <DiscordContainer>
+                    <DiscordText variant="body2">
+                      Discord is currently private :P Follow us on twitter and
+                      turn on the push notification so you don’t miss the next
+                      invite.
+                    </DiscordText>
+                  </DiscordContainer>
+                )}
               </Box>
             </Box>
             <ImageContaier>
