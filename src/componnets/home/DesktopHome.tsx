@@ -1,4 +1,4 @@
-import { Container, Icon, ImageContaier } from "../pages/HomePage";
+import { Icon, ImageContaier } from "../pages/HomePage";
 
 import BackgroundLayout from "../layout/BackgroundLayout";
 import ComingSoon from "../../assets/images/coming-soon-gif.gif";
