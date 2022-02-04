@@ -2,11 +2,11 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { PropsWithChildren, useState } from "react";
 
-import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullWidthPage from "./FullWidthPage";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
 import backgroundImage from "../../assets/images/background.png";
+import catLogo from "../../assets/images/cat-logo.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import mobileBackground from "../../assets/images/background-mobile.png";
 
@@ -106,9 +106,14 @@ export default function BackgroundLayout({
                   height={"55px"}
                   sx={{ padding: "11px 20px 11px 5px" }}
                 >
-                  <CatIcon
+                  <img
+                    src={catLogo}
+                    alt="catlogo"
                     style={{ height: "54px", width: "55px", marginRight: 5 }}
                   />
+                  {/* <CatIcon
+                    style={{ height: "54px", width: "55px", marginRight: 5 }}
+                  /> */}
                   <Title variant="h2">cats on Crack</Title>
                 </SelfContainer>
               </Box>
