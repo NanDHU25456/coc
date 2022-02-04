@@ -46,6 +46,11 @@ export const Icon = CustomStyled(IconButton)(({ theme }) => ({
     "& svg": {
       color: Colors.SECONDARY,
     },
+    "& img": {
+      color: Colors.SECONDARY,
+      height: "100%",
+      width: "100%",
+    },
   },
 }));
 

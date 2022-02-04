@@ -7,11 +7,11 @@ import {
 import React, { useState } from "react";
 
 import { Box } from "@mui/material";
-import { ReactComponent as CatIcon } from "../../assets/images/icons/cat.svg";
 import { Colors } from "../../utils/styles/DefaultTheme";
 import ComingSoon from "../../assets/images/coming-soon-gif.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
+import catLogo from "../../assets/images/cat-logo.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import pause from "../../assets/images/icons/pause.svg";
 import play from "../../assets/images/icons/play.svg";
@@ -49,7 +49,7 @@ export default function MobileHome({
             >
               <Box>
                 <Icon>
-                  <CatIcon />
+                  <img src={catLogo} alt="catLogo" />
                 </Icon>
               </Box>
               <Box position="relative">
