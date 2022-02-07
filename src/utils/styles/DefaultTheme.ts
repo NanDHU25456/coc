@@ -32,6 +32,7 @@ export const Colors = {
 
 export const Fonts = {
   BebasNeue: "Bebas Neue",
+  Balsamic: "Balsamiq Sans",
   Poppins: "Poppins",
 };
 

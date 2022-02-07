@@ -5,7 +5,6 @@ import React, { PropsWithChildren, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullWidthPage from "./FullWidthPage";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
-import backgroundImage from "../../assets/images/background.png";
 import catLogo from "../../assets/images/cat-logo.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import mobileBackground from "../../assets/images/background-mobile.png";
@@ -14,16 +13,12 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
   padding: theme.spacing(2.2),
   position: "relative",
-  height: "100vh",
-  width: "100vw",
-  overflow: "hidden",
+  minHeight: "100vh",
+  width: "100%",
+  overflowX: "hidden",
 }));
 
 export const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
-  backgroundImage: `url(${backgroundImage})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  height: "100%",
   width: "100%",
   position: "relative",
 }));
@@ -86,11 +81,7 @@ export default function BackgroundLayout({
   return (
     <FullWidthPage>
       <Container>
-        <BackgroundContainer
-          display="flex"
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
+        <BackgroundContainer display="flex" flexDirection={"column"}>
           {!showOverlay && (
             <Box
               display="flex"
@@ -100,6 +91,7 @@ export default function BackgroundLayout({
               top={0}
               left={0}
               width="100%"
+              zIndex={1}
             >
               <Box>
                 <SelfContainer
@@ -111,9 +103,6 @@ export default function BackgroundLayout({
                     alt="catlogo"
                     style={{ height: "54px", width: "55px", marginRight: 5 }}
                   />
-                  {/* <CatIcon
-                    style={{ height: "54px", width: "55px", marginRight: 5 }}
-                  /> */}
                   <Title variant="h2">cats on Crack</Title>
                 </SelfContainer>
               </Box>
