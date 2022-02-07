@@ -61,8 +61,9 @@ const FutureSection = CustomStyled(Box)(({ theme }) => ({
   background: `url(${futureImage})`,
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  width: "100%",
+  width: "100vw",
   height: "150px",
+  margin: theme.spacing(0, -2.2),
 }));
 interface DesktopHomeProps {
   toggle: () => void;

@@ -18,11 +18,6 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   overflowX: "hidden",
 }));
 
-export const BackgroundContainer = CustomStyled(Box)(({ theme }) => ({
-  width: "100%",
-  position: "relative",
-}));
-
 export const MobileBackgroundContainer = CustomStyled(Box)(({ theme }) => ({
   backgroundImage: `url(${mobileBackground})`,
   backgroundSize: "cover",
@@ -81,68 +76,66 @@ export default function BackgroundLayout({
   return (
     <FullWidthPage>
       <Container>
-        <BackgroundContainer display="flex" flexDirection={"column"}>
-          {!showOverlay && (
-            <Box
-              display="flex"
-              justifyContent={"space-between"}
-              paddingX={"100px"}
-              position="absolute"
-              top={0}
-              left={0}
-              width="100%"
-              zIndex={1}
-            >
-              <Box>
-                <SelfContainer
-                  height={"55px"}
-                  sx={{ padding: "11px 20px 11px 5px" }}
-                >
-                  <img
-                    src={catLogo}
-                    alt="catlogo"
-                    style={{ height: "54px", width: "55px", marginRight: 5 }}
-                  />
-                  <Title variant="h2">cats on Crack</Title>
-                </SelfContainer>
-              </Box>
-              <Box position="relative" display="flex">
-                <SelfContainer height={"55px"} width="55px" padding={1}>
-                  <Icon onClick={() => setShowDiscord(!showDiscord)}>
-                    <GameIcon />
-                  </Icon>
-                </SelfContainer>
-                <SelfContainer
-                  onClick={() => {
-                    window.open("https://twitter.com/catsoncrack_");
-                  }}
-                  height={"55px"}
-                  width="55px"
-                  padding={1}
-                >
-                  <Icon
-                    onClick={() =>
-                      window.open("https://twitter.com/catsoncrack_")
-                    }
-                  >
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </Icon>
-                </SelfContainer>
-                {showDiscord && (
-                  <DiscordContainer>
-                    <DiscordText variant="body2">
-                      Discord is currently private :P Follow us on twitter and
-                      turn on the push notification so you don’t miss the next
-                      invite.
-                    </DiscordText>
-                  </DiscordContainer>
-                )}
-              </Box>
+        {!showOverlay && (
+          <Box
+            display="flex"
+            justifyContent={"space-between"}
+            paddingX={"60px"}
+            position="absolute"
+            top={"17px"}
+            left={0}
+            width="100%"
+            zIndex={1}
+          >
+            <Box>
+              <SelfContainer
+                height={"55px"}
+                sx={{ padding: "11px 20px 11px 5px" }}
+              >
+                <img
+                  src={catLogo}
+                  alt="catlogo"
+                  style={{ height: "54px", width: "55px", marginRight: 5 }}
+                />
+                <Title variant="h2">cats on Crack</Title>
+              </SelfContainer>
             </Box>
-          )}
+            <Box position="relative" display="flex">
+              <SelfContainer height={"55px"} width="55px" padding={1}>
+                <Icon onClick={() => setShowDiscord(!showDiscord)}>
+                  <GameIcon />
+                </Icon>
+              </SelfContainer>
+              <SelfContainer
+                onClick={() => {
+                  window.open("https://twitter.com/catsoncrack_");
+                }}
+                height={"55px"}
+                width="55px"
+                padding={1}
+              >
+                <Icon
+                  onClick={() =>
+                    window.open("https://twitter.com/catsoncrack_")
+                  }
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </Icon>
+              </SelfContainer>
+              {showDiscord && (
+                <DiscordContainer>
+                  <DiscordText variant="body2">
+                    Discord is currently private :P Follow us on twitter and
+                    turn on the push notification so you don’t miss the next
+                    invite.
+                  </DiscordText>
+                </DiscordContainer>
+              )}
+            </Box>
+          </Box>
+        )}
 
-          {children}
-        </BackgroundContainer>
+        {children}
       </Container>
     </FullWidthPage>
   );
