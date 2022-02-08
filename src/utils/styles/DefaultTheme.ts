@@ -63,7 +63,7 @@ const DefaultTheme = createTheme({
     },
     h2: {
       fontWeight: 400,
-      fontSize: "2.5rem",
+      fontSize: "3rem",
     },
     h3: {
       fontWeight: 400,
