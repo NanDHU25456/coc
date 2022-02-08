@@ -28,6 +28,7 @@ export const Colors = {
   PRIMARY: "#000000",
   SECONDARY: "#ffffff",
   blackBackground: "#0F0F0F",
+  BLUE: "#79D0D7",
 };
 
 export const Fonts = {

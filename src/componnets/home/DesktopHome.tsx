@@ -1,12 +1,22 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+import React, { useState } from "react";
 
 import BackgroundLayout from "../layout/BackgroundLayout";
-import React from "react";
 import backgroundImage from "../../assets/images/background.png";
+import communityImg from "../../assets/images/community.png";
+import eImg from "../../assets/images/e.png";
+import enlightmentImg from "../../assets/images/enlightment.png";
+import featuredArtist from "../../assets/images/featuredArtist.png";
+import mImg from "../../assets/images/m.png";
 import merchImg from "../../assets/images/merch.png";
+import moneyImg from "../../assets/images/money.png";
 import pause from "../../assets/images/icons/pause.svg";
 import play from "../../assets/images/icons/play.svg";
+import questionImg from "../../assets/images/question.png";
+import rImg from "../../assets/images/r.png";
+import swimmingImg from "../../assets/images/swimming.png";
+import xImg from "../../assets/images/x.png";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
@@ -33,7 +43,7 @@ const Icon = CustomStyled(IconButton)(({ theme }) => ({
 
 const StorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
-  height: "70vh",
+  height: "520px",
   background: Colors.PRIMARY,
   border: "1px solid white",
   position: "relative",
@@ -43,7 +53,7 @@ const StorySection = CustomStyled(Box)(({ theme }) => ({
 const StoryContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
   top: "-80px",
-  left: "60px",
+  left: "90px",
   width: "890px",
   borderWidth: "3px",
   borderStyle: "solid",
@@ -100,7 +110,7 @@ const VisionSection = CustomStyled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  marginTop: theme.spacing(15),
+  marginTop: theme.spacing(10),
 }));
 
 const VisionTitle = CustomStyled(Typography)(({ theme }) => ({
@@ -150,7 +160,75 @@ const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   position: "absolute",
+  padding: theme.spacing(2.2),
 }));
+
+const LegendarySectionContainer = CustomStyled(Box)(({ theme }) => ({
+  padding: theme.spacing(0, 15),
+  background: Colors.PRIMARY,
+  height: "350px",
+  marginTop: theme.spacing(-1.2),
+}));
+
+const LegendarySection = CustomStyled(Box)(({ theme }) => ({
+  background: Colors.BLUE,
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const LegendaryTitle = CustomStyled(Box)(({ theme }) => ({
+  fontFamily: Fonts.BebasNeue,
+  fontSize: "3.25rem",
+  color: Colors.PRIMARY,
+}));
+
+const RemixSection = CustomStyled(Box)(({ theme }) => ({
+  height: "300px",
+  width: "98.8vw",
+  margin: theme.spacing(0, -2.2),
+  marginTop: theme.spacing(-16),
+  border: "1px solid brown",
+  background: Colors.SECONDARY,
+  padding: "2px 0px",
+  display: "flex",
+  flexDirection: "column",
+}));
+
+const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
+  height: "60%",
+  display: "flex",
+  flexDirection: "row",
+  "& img": {
+    flex: 1,
+    flexBasis: "220px",
+    width: "220px",
+    height: "100%",
+  },
+}));
+
+const RemixGradientContainer = CustomStyled(Box)(({ theme }) => ({
+  height: "20px",
+  width: "100%",
+  background:
+    "linear-gradient(87.22deg, #FF00C7 5.62%, #00FFD1 50.96%, #FFF500 98.22%)",
+}));
+
+const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
+  padding: theme.spacing(0, 15),
+  background: Colors.PRIMARY,
+  height: "400px",
+}));
+
+const SwimmingSection = CustomStyled(Box)(({ theme }) => ({
+  background: Colors.BLUE,
+  height: "100%",
+  width: "100%",
+  display: "flex",
+}));
+
 interface DesktopHomeProps {
   toggle: () => void;
   playing: boolean;
@@ -162,6 +240,13 @@ export default function DesktopHome({
   playing,
   showOverlay,
 }: DesktopHomeProps) {
+  const [showQuestion, setShowQuestion] = useState(true);
+  const theme = useTheme();
+
+  const questionsImages = new Array(5).fill(questionImg);
+  const remixImages = [rImg, eImg, mImg, questionImg, xImg];
+  const imageList = showQuestion ? questionsImages : remixImages;
+
   return (
     <BackgroundLayout showOverlay={showOverlay}>
       <Container>
@@ -219,7 +304,100 @@ export default function DesktopHome({
             </StoryCardInfo>
           </StoryCardInfoContainer>
         </StoryCardImageContainer>
+        <StoryCardImageContainer>
+          <img src={moneyImg} alt="money" />
+          <StoryCardTitle style={{ top: "-50px", left: "60px" }} variant="h2">
+            MONEY
+          </StoryCardTitle>
+          <StoryCardInfoContainer width="285px" top="-80px" left="160px">
+            <StoryCardInfo variant="body1">
+              Before you know it, you’re walking with them too. And you’re
+              dealing their crack and stuff. No one gives a flying fuck about
+              money. You deal crack in crack and there ain’t no crack head in
+              town who can mess with ya. By now, you’re money.
+            </StoryCardInfo>
+          </StoryCardInfoContainer>
+        </StoryCardImageContainer>
+        <StoryCardImageContainer>
+          <img src={enlightmentImg} alt="enlightment" />
+          <StoryCardTitle style={{ top: "-50px", right: "350px" }} variant="h2">
+            ENLIGHTMENT
+          </StoryCardTitle>
+          <StoryCardInfoContainer width="347px" top="-80px" right="0px">
+            <StoryCardInfo variant="body1">
+              And then just casually, one someday, you go to a cafe, and end up
+              licking rainbow fcking milk that a rocket no shit scientisit made
+              and the sun starts to shine out of your ass. You suddenly have 3
+              extra brains, a leaf hanging from inside your ear and a fire gun
+              inside your eyes. You’re the fucking evolution, m’fo.
+            </StoryCardInfo>
+          </StoryCardInfoContainer>
+        </StoryCardImageContainer>
+        <StoryCardImageContainer marginBottom={"0px !important"}>
+          <img src={communityImg} alt="community" />
+          <StoryCardTitle style={{ top: "-50px", right: "285px" }} variant="h2">
+            COMMUNITY
+          </StoryCardTitle>
+          <StoryCardInfoContainer width="285px" top="-80px" right="0px">
+            <StoryCardInfo variant="body1">
+              And then stuff gets real. The cats take over the world. Yeah just
+              again. It’s a whole cult and shit. You get everyone to vote and
+              all, decide for themselves and get the world spinnin like your
+              head on meth. So, mofo, let’s trip, flip and rip the fucking world
+              by our claws
+            </StoryCardInfo>
+          </StoryCardInfoContainer>
+        </StoryCardImageContainer>
       </StoryCardsSection>
+      <LegendarySectionContainer>
+        <LegendarySection>
+          <LegendaryTitle>THE LEGENDARY CATS</LegendaryTitle>
+        </LegendarySection>
+      </LegendarySectionContainer>
+      <RemixSection>
+        <RemixImageContainer onMouseEnter={() => setShowQuestion(false)}>
+          {imageList.map((val, i) => (
+            <img src={val} alt="remix" key={i} />
+          ))}
+        </RemixImageContainer>
+        <RemixGradientContainer />
+        <Box height="35%" style={{ border: "1px solid red" }}>
+          <Box
+            height="40px"
+            style={{
+              background: `url(${featuredArtist})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "repeat-x",
+            }}
+          />
+        </Box>
+      </RemixSection>
+      <SwimmingSectionContainer>
+        <SwimmingSection>
+          <Box width="50%" padding={theme.spacing(12, 0, 0, 12)}>
+            <Typography
+              style={{ opacity: 0.8, textAlign: "left" }}
+              variant="body1"
+            >
+              A bunch of art people ran into the cats when they were fucking
+              around on the streets. The artists bought some stuff from the
+              cats, and decided to smoke it with them. Turns out, it was the
+              best trip of the art people’s lives. They’re so bat shit crazy
+              about the cats now that they decided to give them cats something.
+              Well, it takes no mf genius to guess they would paint pictures of
+              the cats. But since they’re all high, these pictures are gonna be
+              wonky af version of the artists’ minds.
+            </Typography>
+          </Box>
+          <Box width="50%">
+            <img
+              src={swimmingImg}
+              alt="swimming"
+              style={{ height: "100%", width: "100%" }}
+            />
+          </Box>
+        </SwimmingSection>
+      </SwimmingSectionContainer>
     </BackgroundLayout>
   );
 }
