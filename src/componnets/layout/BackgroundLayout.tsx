@@ -18,7 +18,6 @@ const Container = CustomStyled(Box)(({ theme }) => ({
 }));
 
 export const MobileBackgroundContainer = CustomStyled(Box)(({ theme }) => ({
- 
   minHeight: "100vh",
   width: "100%",
   position: "relative",
