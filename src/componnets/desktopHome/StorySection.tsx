@@ -8,7 +8,7 @@ const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
   height: "520px",
   background: `url(${doodle})`,
-  backgroundSize: "contain",
+  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   position: "relative",
   marginBottom: theme.spacing(8),
