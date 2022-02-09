@@ -13,6 +13,12 @@ const CustomTeamSection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
 }));
 
+const HeroTitle = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.BebasNeue,
+  fontSize: "3.25rem",
+  color: Colors.SECONDARY,
+}));
+
 const TeamTitle = CustomStyled(Typography)(({ theme }) => ({
   fontFamily: Fonts.BebasNeue,
   fontSize: "2.25rem",
@@ -69,6 +75,7 @@ const teams: TeamProps[] = [
 export default function TeamSection() {
   return (
     <CustomTeamSection>
+      <HeroTitle>TEAM</HeroTitle>
       <Grid container spacing={1} style={{ width: "100%" }}>
         {teams.map((team) => (
           <Team key={team.title} {...team} />

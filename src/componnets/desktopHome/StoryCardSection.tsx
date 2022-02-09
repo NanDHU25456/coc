@@ -1,4 +1,4 @@
-import { Box, BoxProps, Typography } from "@mui/material";
+import { Box, BoxProps, Typography, useTheme } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 import React from "react";
@@ -18,7 +18,6 @@ const CustomStoryCardSection = CustomStyled(Box)(({ theme }) => ({
 const StoryCardImageContainer = CustomStyled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  marginBottom: theme.spacing(27.5),
   "& img": {
     width: "100%",
     height: "100%",
@@ -103,10 +102,14 @@ const storyCards: StoryCard[] = [
 ];
 
 export default function StoryCardSection() {
+  const theme = useTheme();
   return (
     <CustomStoryCardSection>
-      {storyCards.map((storyCard) => (
-        <StoryCardImageContainer key={storyCard.title}>
+      {storyCards.map((storyCard, i) => (
+        <StoryCardImageContainer
+          marginBottom={i === storyCards.length - 1 ? 0 : theme.spacing(27.5)}
+          key={storyCard.title}
+        >
           <img src={storyCard.image} alt="storycard" />
           <StoryCardTitle style={storyCard.titleStyle} variant="h2">
             {storyCard.title}
