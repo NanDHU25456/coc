@@ -14,7 +14,7 @@ const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
 const CustomSwimmingSection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.BLUE,
   height: "100%",
-  width: "100%",
+  // width: "100%",
   display: "flex",
 }));
 

@@ -45,6 +45,7 @@ export default function MobileHeroSection({
           bottom: "24px !important",
           right: "24px !important",
           background: Colors.PRIMARY,
+          zIndex: 999,
         }}
         id="cat-play"
         onClick={() => toggle()}
