@@ -34,7 +34,7 @@ const TeamInfo = CustomStyled(Typography)(({ theme }) => ({
   letterSpacing: "0.01em",
 }));
 
-const teams: TeamProps[] = [
+export const teams: TeamProps[] = [
   {
     image: peblo,
     title: "peblo",
@@ -89,12 +89,13 @@ interface TeamProps {
   image: string;
   title: string;
   info: string;
+  height?: string;
 }
 
-const Team = ({ image, title, info }: TeamProps) => {
+export const Team = ({ image, title, info, height = "340px" }: TeamProps) => {
   return (
     <Grid item md={3} xs={12}>
-      <Box height="340px" style={{ background: Colors.SECONDARY }} padding={3}>
+      <Box height={height} style={{ background: Colors.SECONDARY }} padding={3}>
         <img style={{ width: "100%" }} src={image} alt="team" />
         <TeamTitle>{title}</TeamTitle>
         <TeamInfo variant="body2">{info}</TeamInfo>

@@ -7,7 +7,6 @@ import FullWidthPage from "./FullWidthPage";
 import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
 import catLogo from "../../assets/images/cat-logo.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import mobileBackground from "../../assets/images/background-mobile.png";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
@@ -19,10 +18,8 @@ const Container = CustomStyled(Box)(({ theme }) => ({
 }));
 
 export const MobileBackgroundContainer = CustomStyled(Box)(({ theme }) => ({
-  backgroundImage: `url(${mobileBackground})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  height: "100%",
+ 
+  minHeight: "100vh",
   width: "100%",
   position: "relative",
 }));

@@ -23,15 +23,15 @@ interface DesktopHomeProps {
   showOverlay: boolean;
 }
 
+export const questionsImages = new Array(5).fill(questionImg);
+export const remixImages = [rImg, eImg, mImg, questionImg, xImg];
+
 export default function DesktopHome({
   toggle,
   playing,
   showOverlay,
 }: DesktopHomeProps) {
   const [showQuestion, setShowQuestion] = useState(true);
-
-  const questionsImages = new Array(5).fill(questionImg);
-  const remixImages = [rImg, eImg, mImg, questionImg, xImg];
   const imageList = showQuestion ? questionsImages : remixImages;
 
   return (

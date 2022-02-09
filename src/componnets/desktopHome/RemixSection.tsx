@@ -6,7 +6,7 @@ import featuredArtist from "../../assets/images/featuredArtist.png";
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   height: "300px",
-  width: "98.8vw",
+  width: "99vw",
   margin: theme.spacing(0, -2.2),
   marginTop: theme.spacing(-16),
   // border: "1px solid brown",
@@ -22,8 +22,8 @@ const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
   flexDirection: "row",
   "& img": {
     flex: 1,
-    flexBasis: "220px",
-    width: "220px",
+    flexBasis: "120px",
+    width: "120px",
     height: "100%",
   },
 }));

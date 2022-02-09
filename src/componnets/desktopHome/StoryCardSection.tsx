@@ -55,7 +55,7 @@ interface StoryCard {
   info: string;
 }
 
-const storyCards: StoryCard[] = [
+export const storyCards: StoryCard[] = [
   {
     image: merchImg,
     title: "MERCH",

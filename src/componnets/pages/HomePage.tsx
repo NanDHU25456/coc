@@ -8,29 +8,6 @@ import MobileHome from "../home/MobileHome";
 
 export const catAudio = require("../../assets/audio/cat-audio.mp4");
 
-export const Container = CustomStyled(Box)(({ theme }) => ({
-  height: "100%",
-  width: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  position: "relative",
-  [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(3),
-  },
-}));
-
-export const ImageContaier = CustomStyled(Box)(({ theme }) => ({
-  width: "70%",
-  "& img": {
-    height: "100%",
-    width: "100%",
-  },
-  [theme.breakpoints.down("md")]: {
-    width: "90%",
-  },
-}));
-
 export const Icon = CustomStyled(IconButton)(({ theme }) => ({
   position: "absolute",
   bottom: 0,
