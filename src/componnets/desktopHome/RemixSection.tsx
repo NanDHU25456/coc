@@ -9,7 +9,7 @@ const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   width: "98.8vw",
   margin: theme.spacing(0, -2.2),
   marginTop: theme.spacing(-16),
-  border: "1px solid brown",
+  // border: "1px solid brown",
   background: Colors.SECONDARY,
   padding: "2px 0px",
   display: "flex",
