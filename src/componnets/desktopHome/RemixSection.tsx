@@ -1,13 +1,13 @@
-import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
-
 import { Box } from "@mui/material";
 import React from "react";
 import featuredArtist from "../../assets/images/featuredArtist.png";
 import slider from "../../assets/images/slider.png";
+import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   // height: "300px",
-  width: "99vw",
+  // width: "99vw",
   margin: theme.spacing(0, -2.2),
   marginTop: theme.spacing(-16),
   // border: "1px solid brown",
@@ -24,7 +24,7 @@ const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
   "& img": {
     flex: 1,
     flexBasis: "120px",
-    width: "120px",
+    width: "100%",
     height: "100%",
   },
 }));

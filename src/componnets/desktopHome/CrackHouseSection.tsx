@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import React from "react";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
-import React from "react";
 
 const CarckHosueSection = CustomStyled(Box)(({ theme }) => ({
   borderTop: `3px solid ${Colors.SECONDARY}`,
@@ -28,7 +28,7 @@ const CrackInfo = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.SECONDARY,
   textAlign: "center",
   opacity: 0.8,
-  width: "78%",
+  width: "60%",
   marginTop: theme.spacing(5),
 }));
 
@@ -41,7 +41,7 @@ export default function CrackHouseSection() {
       <CrackInfo variant="h5">
         Cats on Crack is a collection of 6,969 cat NFTs—unique digital
         collectibles living on the Solana blockchain. Your Cat doubles as your
-        Club membership card, and grants access to members-only benefits. Future
+        Club membership card, and grants access to members-only benefits. <br />Future
         areas and perks can be unlocked by the community through roadmap
         activation.
       </CrackInfo>

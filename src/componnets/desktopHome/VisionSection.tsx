@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import React from "react";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
-import React from "react";
 
 const CustomVisionSection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,

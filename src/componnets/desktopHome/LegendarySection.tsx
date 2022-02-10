@@ -1,7 +1,7 @@
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
 import { Box } from "@mui/material";
 import React from "react";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+
 
 const LegendarySectionContainer = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 15),
