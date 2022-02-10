@@ -7,11 +7,15 @@ import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
   height: "520px",
-  background: `url(${doodle})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
+  // background: `url(${doodle})`,
+  // backgroundSize: "cover",
+  // backgroundRepeat: "no-repeat",
   position: "relative",
   marginBottom: theme.spacing(8),
+  "& img": {
+    height: "100%",
+    width: "100%",
+  },
 }));
 
 const StoryContainer = CustomStyled(Box)(({ theme }) => ({
@@ -43,6 +47,7 @@ const StoryInfo = CustomStyled(Typography)(({ theme }) => ({
 export default function StorySection() {
   return (
     <CustomStorySection>
+      <img src={doodle} alt="doodle" />
       <StoryContainer>
         <StoryTitle variant="h2">THE BEGINNING</StoryTitle>
         <StoryInfo variant="h5">
