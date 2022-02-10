@@ -7,18 +7,25 @@ import doodle from "../../assets/images/doodle.png";
 const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
   height: "520px",
-  background: `url(${doodle})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
+  // background: `url(${doodle})`,
+  // backgroundSize: "cover",
+  // backgroundRepeat: "no-repeat",
   position: "relative",
   marginBottom: theme.spacing(8),
+  "& img": {
+    height: "100%",
+    width: "100%",
+  },
 }));
 
 const StoryContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-80px",
-  left: "90px",
-  width: "890px",
+  // top: "-80px",
+  // left: "90px",
+  // width: "890px",
+  width: "65%",
+  top: "-14%",
+  left: "8%",
   borderWidth: "3px",
   borderStyle: "solid",
   borderImage:
@@ -43,6 +50,7 @@ const StoryInfo = CustomStyled(Typography)(({ theme }) => ({
 export default function StorySection() {
   return (
     <CustomStorySection>
+      <img src={doodle} alt="doodle" />
       <StoryContainer>
         <StoryTitle variant="h2">THE BEGINING</StoryTitle>
         <StoryInfo variant="h5">
