@@ -6,7 +6,7 @@ import featuredArtist from "../../assets/images/featuredArtist.png";
 import slider from "../../assets/images/slider.png";
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
-  height: "300px",
+  // height: "300px",
   width: "99vw",
   margin: theme.spacing(0, -2.2),
   marginTop: theme.spacing(-16),
@@ -78,7 +78,7 @@ export default function RemixSection({
         ))}
       </RemixImageContainer>
       <RemixGradientContainer />
-      <Box height="35%" style={{ border: "1px solid red" }}>
+      <Box height="100px" style={{ border: "1px solid red" }}>
         <Box
           height="40px"
           style={{
