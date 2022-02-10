@@ -9,7 +9,7 @@ const CustomFooterSection = CustomStyled(Box)(({ theme }) => ({
   backgroundSize: "contain",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  height: "80px",
+  height: "55px",
   width: "80%",
 }));
 

@@ -1,17 +1,21 @@
 import { Box, BoxProps, Typography, useTheme } from "@mui/material";
-import React from "react";
-import communityImg from "../../assets/images/community.png";
-import enlightmentImg from "../../assets/images/enlightment.png";
-import merchImg from "../../assets/images/merch.png";
-import moneyImg from "../../assets/images/money.png";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
+import React from "react";
+import communityImg from "../../assets/images/community.png";
+import communityMobile from "../../assets/images/community-mobile.png";
+import enlightmentImg from "../../assets/images/enlightment.png";
+import enlightmentMobile from "../../assets/images/enlightment-mobile.png";
+import merchImg from "../../assets/images/merch.png";
+import merchMobile from "../../assets/images/merch-mobile.png";
+import moneyImg from "../../assets/images/money.png";
+import moneyMobile from "../../assets/images/money-mobile.png";
 
 const CustomStoryCardSection = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 15),
   width: "100%",
   // border: "1px solid white",
-  marginTop: theme.spacing(-28),
+  marginTop: theme.spacing(-10),
   marginBottom: 0,
 }));
 
@@ -34,12 +38,14 @@ const StoryCardInfo = CustomStyled(Typography)(({ theme }) => ({
   fontFamily: Fonts.Balsamic,
   color: Colors.SECONDARY,
   opacity: 0.8,
+  marginBottom: theme.spacing(1),
 }));
 
 const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
   opacity: 0.8,
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
   position: "absolute",
   padding: theme.spacing(2.2),
@@ -49,26 +55,31 @@ type titleStringType = { [Key: string]: string };
 
 interface StoryCard {
   image: string;
+  mobileImage: string;
   title: string;
   titleStyle: titleStringType;
   storyCardStyle: BoxProps;
   info: string;
+  newLine?: string;
 }
 
 export const storyCards: StoryCard[] = [
   {
     image: merchImg,
+    mobileImage: merchMobile,
     title: "MERCH",
     titleStyle: { top: "-60px", right: "390px" },
-    storyCardStyle: { width: "285px", top: "-120px", right: "100px" },
+    storyCardStyle: { width: "285px", top: "-100px", right: "100px" },
     info: `Everytime a cat ain’t got no clue what he’s smoking, things start to
             get real lit, real soon. He gets a bunch of other cats. And they all
-            become a pack. Now they’re walking the streets, looking all woke.
+            become a pack.`,
+    newLine: `Now they’re walking the streets, looking all woke.
             Their sweats are cool, their caps got skulls and their skulls got
             caps. The streets are full of these cool cats wearing dope af shift.`,
   },
   {
     image: moneyImg,
+    mobileImage: moneyMobile,
     title: "MONEY",
     titleStyle: { top: "-60px", left: "60px" },
     storyCardStyle: { width: "285px", top: "-120px", left: "160px" },
@@ -79,6 +90,7 @@ export const storyCards: StoryCard[] = [
   },
   {
     image: enlightmentImg,
+    mobileImage: enlightmentMobile,
     title: "ENLIGHTMENT",
     titleStyle: { top: "-60px", right: "420px" },
     storyCardStyle: { width: "400px", top: "-120px", right: "0px" },
@@ -90,13 +102,15 @@ export const storyCards: StoryCard[] = [
   },
   {
     image: communityImg,
+    mobileImage: communityMobile,
     title: "COMMUNITY",
     titleStyle: { top: "-60px", right: "300px" },
     storyCardStyle: { width: "285px", top: "-120px", right: "0px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
             again. It’s a whole cult and shit. You get everyone to vote and all,
             decide for themselves and get the world spinnin like your head on
-            meth. So, mofo, let’s trip, flip and rip the fucking world by our
+            meth.`,
+    newLine: `So, mofo, let’s trip, flip and rip the fucking world by our
             claws`,
   },
 ];
@@ -116,6 +130,9 @@ export default function StoryCardSection() {
           </StoryCardTitle>
           <StoryCardInfoContainer {...storyCard.storyCardStyle}>
             <StoryCardInfo variant="body1">{storyCard.info}</StoryCardInfo>
+            {storyCard.newLine && (
+              <StoryCardInfo variant="body1">{storyCard.newLine}</StoryCardInfo>
+            )}
           </StoryCardInfoContainer>
         </StoryCardImageContainer>
       ))}

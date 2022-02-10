@@ -1,8 +1,8 @@
+import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
 import React, { useState } from "react";
 
 import { Box } from "@mui/material";
 import CustomMobileStorySection from "../mobileHome/MobileStorySection";
-import { CustomStyled } from "../../utils/styles/DefaultTheme";
 import FooterSection from "../desktopHome/FooterSection";
 import { MobileBackgroundContainer } from "../layout/BackgroundLayout";
 import MobileCrackHouseSection from "../mobileHome/MobileCrackHouseSection";
@@ -14,11 +14,16 @@ import MobileTeamSection from "../mobileHome/MobileTeamSection";
 import ourVision from "../../assets/images/our-vision.png";
 
 const VisionSection = CustomStyled(Box)(({ theme }) => ({
-  background: `url(${ourVision})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  height: "170px",
+  background: Colors.PRIMARY,
+  // backgroundSize: "cover",
+  // backgroundRepeat: "no-repeat",
+  height: "100px",
   width: "100%",
+  marginTop: theme.spacing(2),
+  "& img": {
+    width: "100%",
+    height: "100%",
+  },
 }));
 interface MobileHomeProps {
   toggle: () => void;
@@ -44,7 +49,9 @@ export default function MobileHome({
       />
       <CustomMobileStorySection />
       <MobileCrackHouseSection />
-      <VisionSection />
+      <VisionSection>
+        <img src={ourVision} alt="vision" />
+      </VisionSection>
       <MobileStoryCardSection />
       <MobileLegendarySection />
       <MobileFeatureSection />

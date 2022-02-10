@@ -29,11 +29,14 @@ export default function MobileStoryCardSection() {
         <Box key={storyCard.title} marginBottom={3}>
           <StoryCardTitle>{storyCard.title}</StoryCardTitle>
           <img
-            src={storyCard.image}
+            src={storyCard.mobileImage}
             alt="storyCard"
             style={{ width: "100%", marginBottom: "8px" }}
           />
-          <StoryCardInfo variant="body2">{storyCard.info}</StoryCardInfo>
+          <StoryCardInfo variant="body2">{`${storyCard.info}`}</StoryCardInfo>
+          {storyCard.newLine && (
+            <StoryCardInfo variant="body2">{storyCard.newLine}</StoryCardInfo>
+          )}
         </Box>
       ))}
     </StoryCardSection>

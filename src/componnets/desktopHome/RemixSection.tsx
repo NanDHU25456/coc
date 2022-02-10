@@ -1,9 +1,9 @@
+import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+
 import { Box } from "@mui/material";
 import React from "react";
 import featuredArtist from "../../assets/images/featuredArtist.png";
 import slider from "../../assets/images/slider.png";
-import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
-
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   // height: "300px",
@@ -24,7 +24,7 @@ const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
   "& img": {
     flex: 1,
     flexBasis: "120px",
-    width: "100%",
+    width: "120px",
     height: "100%",
   },
 }));

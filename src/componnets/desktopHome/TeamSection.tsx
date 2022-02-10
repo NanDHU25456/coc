@@ -92,7 +92,7 @@ interface TeamProps {
   height?: string;
 }
 
-export const Team = ({ image, title, info, height = "340px" }: TeamProps) => {
+export const Team = ({ image, title, info, height = "100%" }: TeamProps) => {
   return (
     <Grid item md={3} xs={12}>
       <Box height={height} style={{ background: Colors.SECONDARY }} padding={3}>

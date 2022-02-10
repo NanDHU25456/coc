@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
-import doodle from "../../assets/images/doodle.png";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
+import React from "react";
+import doodle from "../../assets/images/doodle.png";
 
 const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
@@ -20,9 +20,12 @@ const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
 
 const StoryContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-60px",
-  left: "110px",
-  width: "890px",
+  // top: "-60px",
+  // left: "110px",
+  // width: "890px",
+  top: "-15%",
+  left: "6%",
+  width: "70%",
   borderWidth: "3px",
   borderStyle: "solid",
   borderImage:
@@ -61,7 +64,8 @@ export default function StorySection() {
           stirring whatever rat shit they can to keep the high going.
         </StoryInfo>
         <StoryInfo variant="h5">
-          <br />Bro, this litter don’t know shit about how to clean up.
+          <br />
+          Bro, this litter don’t know shit about how to clean up.
         </StoryInfo>
       </StoryContainer>
     </CustomStorySection>

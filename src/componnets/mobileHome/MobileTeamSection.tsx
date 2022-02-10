@@ -6,7 +6,7 @@ import React from "react";
 
 const TeamSection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
-  padding: theme.spacing(2, 13.75),
+  padding: theme.spacing(2, 13),
 }));
 
 const TeamTitle = CustomStyled(Typography)(({ theme }) => ({

@@ -1,13 +1,13 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import React from "react";
-import swimmingImg from "../../assets/images/swimming.png";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
+import React from "react";
+import swimmingImg from "../../assets/images/swimming.png";
 
 const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 15),
   background: Colors.PRIMARY,
-  height: "300px",
+  // height: "300px",
   marginBottom: theme.spacing(27.5),
 }));
 
@@ -31,7 +31,7 @@ export default function SwimmingSection() {
   return (
     <SwimmingSectionContainer>
       <CustomSwimmingSection>
-        <Box width="50%" padding={theme.spacing(15, 0, 0, 12)}>
+        <Box width="50%" padding={theme.spacing(10, 0, 0, 12)}>
           <CustomSwimmingTypo>
             A bunch of art people ran into the cats when they were fucking
             around on the streets. The artists bought some stuff from the cats,
@@ -43,11 +43,16 @@ export default function SwimmingSection() {
             the artists’ minds.
           </CustomSwimmingTypo>
         </Box>
-        <Box width="50%">
+        <Box
+          width="50%"
+          display={"flex"}
+          justifyContent="center"
+          alignItems="center"
+        >
           <img
             src={swimmingImg}
             alt="swimming"
-            style={{ width: "100%" }}
+            style={{ width: "100%", maxHeight: "500px", maxWidth: "500px" }}
           />
         </Box>
       </CustomSwimmingSection>

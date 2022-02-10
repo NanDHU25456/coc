@@ -10,7 +10,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
-  padding: theme.spacing(2.2),
+  padding: theme.spacing(2.2, 2.2, 0, 2.2),
   position: "relative",
   minHeight: "100vh",
   width: "100%",
