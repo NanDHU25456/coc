@@ -80,7 +80,7 @@ export default function RemixSection({
       <RemixGradientContainer />
       <Box height="100px" style={{ border: "1px solid red" }}>
         <Box
-          height="40px"
+          height="60px"
           style={{
             background: `url(${featuredArtist})`,
             backgroundSize: "cover",

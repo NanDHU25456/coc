@@ -7,7 +7,7 @@ import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 15),
   background: Colors.PRIMARY,
-  height: "400px",
+  height: "300px",
   marginBottom: theme.spacing(27.5),
 }));
 
