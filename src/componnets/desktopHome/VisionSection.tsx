@@ -14,24 +14,13 @@ const CustomVisionSection = CustomStyled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "280px",
+  height: "auto",
   marginTop: theme.spacing(10),
   "& img": {
     width: "100%",
     height: "100%",
   },
 }));
-
-// const VisionTitle = CustomStyled(Typography)(({ theme }) => ({
-//   fontFamily: Fonts.BebasNeue,
-//   fontSize: "23.12rem",
-//   opacity: 0.1,
-//   textTransform: "uppercase",
-//   color: Colors.SECONDARY,
-//   width: "90%",
-//   letterSpacing: "-0.04em",
-//   textAlign: "center",
-// }));
 
 export default function VisionSection() {
   return (

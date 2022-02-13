@@ -36,8 +36,12 @@ export default function DesktopHome({
 
   return (
     <BackgroundLayout showOverlay={showOverlay}>
-      <HeroSection playing={playing} toggle={toggle} />
-      <StorySection />
+      <HeroSection
+        showOverlay={showOverlay}
+        playing={playing}
+        toggle={toggle}
+      />
+      <StorySection showOverlay={showOverlay} />
       <CrackHouseSection />
       <VisionSection />
       <StoryCardSection />

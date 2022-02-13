@@ -47,27 +47,33 @@ const StoryInfo = CustomStyled(Typography)(({ theme }) => ({
   opacity: 0.8,
 }));
 
-export default function StorySection() {
+interface StorySectionProps {
+  showOverlay: boolean;
+}
+
+export default function StorySection({ showOverlay }: StorySectionProps) {
   return (
     <CustomStorySection>
       <img src={doodle} alt="doodle" />
-      <StoryContainer>
-        <StoryTitle variant="h2">THE BEGINNING</StoryTitle>
-        <StoryInfo variant="h5">
-          It’s 2030 or something. Doping is legal now. There’s no scratched
-          faces no more. Sugar’s sold at groceries. Shrooms are sold with
-          veggies. No one’s gotta wriggle down a forest in the middle of the
-          night and there ain’t no more gun shots and shit. Everything’s pretty
-          chill. But the cats miss being hunted by them dogs. And ofcourse, they
-          miss that fucking OG prison cell. So, they’re picking bullshit
-          catfights, posting their own mugshots, cat calling the cops and
-          stirring whatever rat shit they can to keep the high going.
-        </StoryInfo>
-        <StoryInfo variant="h5">
-          <br />
-          Bro, this litter don’t know shit about how to clean up.
-        </StoryInfo>
-      </StoryContainer>
+      {!showOverlay && (
+        <StoryContainer>
+          <StoryTitle variant="h2">THE BEGINNING</StoryTitle>
+          <StoryInfo variant="h5">
+            It’s 2030 or something. Doping is legal now. There’s no scratched
+            faces no more. Sugar’s sold at groceries. Shrooms are sold with
+            veggies. No one’s gotta wriggle down a forest in the middle of the
+            night and there ain’t no more gun shots and shit. Everything’s
+            pretty chill. But the cats miss being hunted by them dogs. And
+            ofcourse, they miss that fucking OG prison cell. So, they’re picking
+            bullshit catfights, posting their own mugshots, cat calling the cops
+            and stirring whatever rat shit they can to keep the high going.
+          </StoryInfo>
+          <StoryInfo variant="h5">
+            <br />
+            Bro, this litter don’t know shit about how to clean up.
+          </StoryInfo>
+        </StoryContainer>
+      )}
     </CustomStorySection>
   );
 }

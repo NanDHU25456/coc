@@ -1,35 +1,43 @@
+import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+
 import { Box } from "@mui/material";
 import React from "react";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
+import legendary from "../../assets/images/legendary.png";
 
 const LegendarySectionContainer = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 15),
   background: Colors.PRIMARY,
   height: "350px",
-  marginTop: theme.spacing(-1.2),
+  marginTop: theme.spacing(-1),
 }));
 
 const CustomLegendarySection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.BLUE,
   width: "100%",
-  height: "100%",
+  height: "auto",
   display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  padding: theme.spacing(8, 0),
+  // alignItems: "center",
+  // justifyContent: "center",
+  "& img": {
+    height: "100%",
+    width: "100%",
+  },
 }));
 
-const LegendaryTitle = CustomStyled(Box)(({ theme }) => ({
-  fontFamily: Fonts.BebasNeue,
-  fontSize: "3.25rem",
-  color: Colors.PRIMARY,
-}));
+// const LegendaryTitle = CustomStyled(Box)(({ theme }) => ({
+//   fontFamily: Fonts.BebasNeue,
+//   fontSize: "12rem",
+//   color: Colors.SECONDARY,
+//   maxWidth: "100%",
+// }));
 
 export default function LegendarySection() {
   return (
     <LegendarySectionContainer>
       <CustomLegendarySection>
-        <LegendaryTitle>THE LEGENDARY CATS</LegendaryTitle>
+        <img src={legendary} alt="legendary" />
+        {/* <LegendaryTitle>THE LEGENDARY CATS</LegendaryTitle> */}
       </CustomLegendarySection>
     </LegendarySectionContainer>
   );

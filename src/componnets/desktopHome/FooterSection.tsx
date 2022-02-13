@@ -5,12 +5,20 @@ import React from "react";
 import nofur from "../../assets/images/nofur.png";
 
 const CustomFooterSection = CustomStyled(Box)(({ theme }) => ({
-  background: `url(${nofur})`,
-  backgroundSize: "contain",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  height: "55px",
+  // background: `url(${nofur})`,
+  // backgroundSize: "contain",
+  // backgroundRepeat: "no-repeat",
+  // backgroundPosition: "center",
+  height: "auto",
   width: "80%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  paddingTop: theme.spacing(4),
+  "& img": {
+    height: "100%",
+    width: "100%",
+  },
 }));
 
 export default function FooterSection() {
@@ -22,7 +30,9 @@ export default function FooterSection() {
       alignItems="center"
       borderTop={`3px solid ${Colors.SECONDARY}`}
     >
-      <CustomFooterSection />
+      <CustomFooterSection>
+        <img src={nofur} alt="nofur" />
+      </CustomFooterSection>
     </Box>
   );
 }

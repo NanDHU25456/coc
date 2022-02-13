@@ -32,14 +32,21 @@ const Icon = CustomStyled(IconButton)(({ theme }) => ({
 interface HeroSectionProps {
   toggle: () => void;
   playing: boolean;
+  showOverlay: boolean;
 }
 
-export default function HeroSection({ toggle, playing }: HeroSectionProps) {
+export default function HeroSection({
+  toggle,
+  playing,
+  showOverlay,
+}: HeroSectionProps) {
   return (
     <Container>
-      <Icon onClick={() => toggle()} id="cat-play">
-        <img src={playing ? pause : play} alt="audio" />
-      </Icon>
+      {!showOverlay && (
+        <Icon onClick={() => toggle()} id="cat-play">
+          <img src={playing ? pause : play} alt="audio" />
+        </Icon>
+      )}
     </Container>
   );
 }

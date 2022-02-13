@@ -9,12 +9,15 @@ const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   // height: "300px",
   // width: "99vw",
   margin: theme.spacing(0, -2.2),
-  marginTop: theme.spacing(-16),
+  marginTop: theme.spacing(-22),
   // border: "1px solid brown",
   background: Colors.SECONDARY,
   padding: "2px 0px",
   display: "flex",
   flexDirection: "column",
+  [theme.breakpoints.up("xl")]: {
+    marginTop: theme.spacing(-14),
+  },
 }));
 
 const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
