@@ -55,7 +55,7 @@ export default function HomePage() {
   }, [playing]);
 
   return (
-    <Box>
+    <Box height="100vh" overflow={showOverlay ? "hidden" : "auto"}>
       <audio ref={audioRef} id="audio" autoPlay loop>
         <source src={catAudio} type="audio/mpeg" />
       </audio>

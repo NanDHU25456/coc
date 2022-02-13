@@ -1,7 +1,6 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
 import React from "react";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   position: "fixed",
@@ -16,6 +15,7 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   zIndex: 100,
   opacity: 0.8,
   cursor: "pointer",
+  overflow: "hidden",
 }));
 
 const OverlayText = CustomStyled(Typography)(({ theme }) => ({
