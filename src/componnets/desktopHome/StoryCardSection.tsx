@@ -1,6 +1,6 @@
 import { Box, BoxProps, Typography, useTheme } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import communityImg from "../../assets/images/community.png";
 import communityMobile from "../../assets/images/community-mobile.png";
@@ -12,6 +12,8 @@ import merchImg from "../../assets/images/merch.png";
 import merchMobile from "../../assets/images/merch-mobile.png";
 import moneyImg from "../../assets/images/money.png";
 import moneyMobile from "../../assets/images/money-mobile.png";
+
+export const communityAudio = require("../../assets/audio/community-audio.mpeg");
 
 const CustomStoryCardSection = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 0),
@@ -156,13 +158,26 @@ export default function StoryCardSection({
   playing: isMainAudioPlaying,
 }: StoryCardProps) {
   const theme = useTheme();
+  const audioRef = useRef<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const onClickImage = () => {
-    if (isMainAudioPlaying) {
-      toggle();
+    try {
+      if (audioRef && audioRef.current) {
+        // console.log("playing..", playing);
+        if (isMainAudioPlaying) {
+          toggle();
+        }
+        if (!isPlaying) {
+          audioRef.current.play();
+        } else {
+          audioRef.current.pause();
+        }
+        setIsPlaying(!isPlaying);
+      }
+    } catch (error) {
+      console.log("error..", error);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -194,6 +209,9 @@ export default function StoryCardSection({
           )}
         </StoryCardImageContainer>
       ))}
+      <audio ref={audioRef} id="audio" autoPlay loop>
+        <source src={communityAudio} type="audio/mpeg" />
+      </audio>
     </CustomStoryCardSection>
   );
 }
