@@ -25,7 +25,7 @@ declare module "@mui/material/styles" {
 }
 
 export const Colors = {
-  PRIMARY: "#000000",
+  PRIMARY: "#0F0F0F",
   SECONDARY: "#ffffff",
   blackBackground: "#0F0F0F",
   BLUE: "#79D0D7",
@@ -54,6 +54,15 @@ const DefaultTheme = createTheme({
     },
     customBackground: {
       light: Colors.blackBackground,
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1440,
+      xl: 1720,
     },
   },
   typography: {

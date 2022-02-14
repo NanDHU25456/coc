@@ -18,6 +18,7 @@ const CarckHosueSection = CustomStyled(Box)(({ theme }) => ({
   alignItems: "center",
   paddingBottom: theme.spacing(9),
   background: "#0F0F0F",
+  width: "100%",
 }));
 
 const CrackTitle = CustomStyled(Typography)(({ theme }) => ({
@@ -58,17 +59,20 @@ const CrackInfo = CustomStyled(Typography)(({ theme }) => ({
 
 export default function CrackHouseSection() {
   return (
-    <CarckHosueSection>
-      <Box marginTop={-6} style={{ background: Colors.PRIMARY }}>
-        <CrackTitle>WELCOME TO THE CRACKHOUSE</CrackTitle>
-      </Box>
-      <CrackInfo variant="h5">
-        Cats on Crack is a collection of 6,969 cat NFTs—unique digital
-        collectibles living on the Solana blockchain. Your Cat doubles as your
-        Club membership card, and grants access to members-only benefits. <br />
-        Future areas and perks can be unlocked by the community through roadmap
-        activation.
-      </CrackInfo>
-    </CarckHosueSection>
+    <Box width="100%" maxWidth="1920px" paddingX={0} marginBottom={2}>
+      <CarckHosueSection>
+        <Box marginTop={-6} style={{ background: Colors.PRIMARY }}>
+          <CrackTitle>WELCOME TO THE CRACKHOUSE</CrackTitle>
+        </Box>
+        <CrackInfo variant="h5">
+          Cats on Crack is a collection of 6,969 cat NFTs—unique digital
+          collectibles living on the Solana blockchain. Your Cat doubles as your
+          Club membership card, and grants access to members-only benefits.{" "}
+          <br />
+          Future areas and perks can be unlocked by the community through
+          roadmap activation.
+        </CrackInfo>
+      </CarckHosueSection>
+    </Box>
   );
 }

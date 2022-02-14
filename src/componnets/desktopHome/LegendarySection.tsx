@@ -5,10 +5,11 @@ import React from "react";
 import legendary from "../../assets/images/legendary.png";
 
 const LegendarySectionContainer = CustomStyled(Box)(({ theme }) => ({
-  padding: theme.spacing(0, 15),
+  padding: theme.spacing(0, 0),
   background: Colors.PRIMARY,
   height: "350px",
   marginTop: theme.spacing(-1),
+  width: "103%",
 }));
 
 const CustomLegendarySection = CustomStyled(Box)(({ theme }) => ({

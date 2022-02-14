@@ -5,8 +5,9 @@ import React from "react";
 import ourVision from "../../assets/images/our-vision.png";
 
 const VisionContainer = CustomStyled(Box)(({ theme }) => ({
-  padding: theme.spacing(0, 15),
+  padding: theme.spacing(0, 0),
   background: Colors.PRIMARY,
+  width: "100%",
 }));
 
 const CustomVisionSection = CustomStyled(Box)(({ theme }) => ({

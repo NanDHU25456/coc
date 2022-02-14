@@ -30,7 +30,7 @@ const StoryContainer = CustomStyled(Box)(({ theme }) => ({
   borderStyle: "solid",
   borderImage:
     "linear-gradient(180.13deg, #FFFFFF 0.11%, rgba(255, 255, 255, 0) 61.68%) 1  1 25%",
-  padding: theme.spacing(3),
+  padding: theme.spacing(5),
   background: Colors.PRIMARY,
 }));
 

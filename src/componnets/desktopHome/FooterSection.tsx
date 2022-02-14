@@ -1,20 +1,15 @@
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
 
-import { Box } from "@mui/material";
 import React from "react";
 import nofur from "../../assets/images/nofur.png";
 
 const CustomFooterSection = CustomStyled(Box)(({ theme }) => ({
-  // background: `url(${nofur})`,
-  // backgroundSize: "contain",
-  // backgroundRepeat: "no-repeat",
-  // backgroundPosition: "center",
   height: "auto",
   width: "80%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  paddingTop: theme.spacing(4),
   "& img": {
     height: "100%",
     width: "100%",
@@ -22,13 +17,19 @@ const CustomFooterSection = CustomStyled(Box)(({ theme }) => ({
 }));
 
 export default function FooterSection() {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <Box
       width="100%"
       display="flex"
       justifyContent="center"
       alignItems="center"
+      height="70px"
       borderTop={`3px solid ${Colors.SECONDARY}`}
+      overflow="hidden"
+      paddingTop={isLargeScreen ? 10 : 0}
     >
       <CustomFooterSection>
         <img src={nofur} alt="nofur" />

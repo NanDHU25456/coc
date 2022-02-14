@@ -15,6 +15,10 @@ const Container = CustomStyled(Box)(({ theme }) => ({
   minHeight: "100vh",
   width: "100%",
   overflowX: "hidden",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
 }));
 
 export const MobileBackgroundContainer = CustomStyled(Box)(({ theme }) => ({
@@ -76,11 +80,15 @@ export default function BackgroundLayout({
           <Box
             display="flex"
             justifyContent={"space-between"}
-            paddingX={"60px"}
+            paddingX={12}
             position="absolute"
             top={"17px"}
-            left={0}
+            left={"50%"}
+            style={{
+              transform: "translateX(-50%)",
+            }}
             width="100%"
+            maxWidth="1920px"
             zIndex={1}
           >
             <Box>

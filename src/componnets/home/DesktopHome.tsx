@@ -1,3 +1,4 @@
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import React, { useState } from "react";
 
 import BackgroundLayout from "../layout/BackgroundLayout";
@@ -33,6 +34,8 @@ export default function DesktopHome({
 }: DesktopHomeProps) {
   const [showQuestion, setShowQuestion] = useState(true);
   const imageList = showQuestion ? questionsImages : remixImages;
+  const theme = useTheme();
+  const isExtralargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 
   return (
     <BackgroundLayout showOverlay={showOverlay}>
@@ -41,15 +44,26 @@ export default function DesktopHome({
         playing={playing}
         toggle={toggle}
       />
-      <StorySection showOverlay={showOverlay} />
-      <CrackHouseSection />
-      <VisionSection />
-      <StoryCardSection />
-      <LegendarySection />
-      <RemixSection imageList={imageList} setShowQuestion={setShowQuestion} />
-      <SwimmingSection />
-      <TeamSection />
-      <FooterSection />
+      {!isExtralargeScreen && <StorySection showOverlay={showOverlay} />}
+      <Box
+        maxWidth="1920px"
+        display="flex"
+        flexDirection="column"
+        justifyContent={"center"}
+        alignItems="center"
+        paddingX={10}
+      >
+        {isExtralargeScreen && <StorySection showOverlay={showOverlay} />}
+        <CrackHouseSection />
+        <VisionSection />
+        <StoryCardSection playing={playing} toggle={toggle} />
+        <LegendarySection />
+        <RemixSection imageList={imageList} setShowQuestion={setShowQuestion} />
+        <SwimmingSection />
+        <TeamSection />
+        {isExtralargeScreen && <FooterSection />}
+      </Box>
+      {!isExtralargeScreen && <FooterSection />}
     </BackgroundLayout>
   );
 }

@@ -1,14 +1,15 @@
-import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+import { Box, Typography } from "@mui/material";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
-import { Box } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import featuredArtist from "../../assets/images/featuredArtist.png";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import slider from "../../assets/images/slider.png";
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   // height: "300px",
   // width: "99vw",
-  margin: theme.spacing(0, -2.2),
+  width: "103%",
   marginTop: theme.spacing(-22),
   // border: "1px solid brown",
   background: Colors.SECONDARY,
@@ -33,19 +34,23 @@ const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
 }));
 
 const ScrollingContainer = CustomStyled(Box)(({ theme }) => ({
-  height: "100%",
+  height: "85%",
   width: "100%",
   position: "relative",
-  overflow: "hiddenn",
+  overflow: "hidden",
   transform: "translate3d(0, 0, 0)",
+  background: Colors.SECONDARY,
 }));
 
 const Scrolling = CustomStyled(Box)(({ theme }) => ({
-  height: "60%",
-  width: "400%",
+  height: "70%",
+  width: "200%",
+  // padding: theme.spacing(2),
   background: `url(${slider})`,
   backgroundRepeat: "repeat-x",
+  // background: Colors.SECONDARY,
   position: "absolute",
+  display: "flex",
   top: 0,
   left: 0,
   transform: "translate3d(0, 0, 0)",
@@ -55,6 +60,33 @@ const Scrolling = CustomStyled(Box)(({ theme }) => ({
       transform: "translateX(-66.6666%)",
     },
   },
+}));
+
+const FeaturedContainer = CustomStyled(Box)(({ theme }) => ({
+  display: "flex",
+  marginRight: theme.spacing(1),
+  "& svg": {
+    height: "12px",
+    width: "12px",
+    fontSize: "12px",
+    marginTop: theme.spacing(1),
+  },
+}));
+
+const FeaturedTitle = CustomStyled(Typography)(({ theme }) => ({
+  color: Colors.PRIMARY,
+  fontFamily: Fonts.BebasNeue,
+  marginRight: theme.spacing(1.2),
+  textTransform: "uppercase",
+  letterSpacing: "-0.011em",
+}));
+
+const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
+  color: Colors.PRIMARY,
+  fontFamily: Fonts.BebasNeue,
+  textTransform: "uppercase",
+  letterSpacing: "-0.011em",
+  fontSize: "2rem",
 }));
 
 const RemixGradientContainer = CustomStyled(Box)(({ theme }) => ({
@@ -83,15 +115,21 @@ export default function RemixSection({
       <RemixGradientContainer />
       <Box height="100px" style={{ border: "1px solid red" }}>
         <Box
-          height="60px"
-          style={{
-            background: `url(${featuredArtist})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "repeat-x",
-          }}
-        />
+          height="40px"
+          padding={1.2}
+          overflow="hidden"
+          display="flex"
+          flexWrap="nowrap"
+        >
+          {new Array(10).fill("empty").map((val, i) => (
+            <FeaturedContainer flex={1} display="flex">
+              <FeaturedTitle variant="h5">Featured Artist</FeaturedTitle>
+              <FontAwesomeIcon icon={faCircle} />
+            </FeaturedContainer>
+          ))}
+        </Box>
         <ScrollingContainer>
-          <Scrolling />
+          <Scrolling></Scrolling>
         </ScrollingContainer>
       </Box>
     </CustomRemixSection>

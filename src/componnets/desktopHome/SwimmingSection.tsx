@@ -5,10 +5,11 @@ import React from "react";
 import swimmingImg from "../../assets/images/swimming.png";
 
 const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
-  padding: theme.spacing(0, 15),
+  // padding: theme.spacing(0, 15),
   background: Colors.PRIMARY,
   // height: "300px",
-  marginBottom: theme.spacing(27.5),
+  width: "103%",
+  marginBottom: theme.spacing(20),
 }));
 
 const CustomSwimmingTypo = CustomStyled(Typography)(({ theme }) => ({

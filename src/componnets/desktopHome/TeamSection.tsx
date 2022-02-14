@@ -9,7 +9,7 @@ import peblo from "../../assets/images/peblo.png";
 import venga from "../../assets/images/venga.png";
 
 const CustomTeamSection = CustomStyled(Box)(({ theme }) => ({
-  padding: theme.spacing(0, 37),
+  padding: theme.spacing(0, 22),
   background: Colors.PRIMARY,
 }));
 
