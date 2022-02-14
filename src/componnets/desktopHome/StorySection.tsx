@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 import React from "react";
@@ -52,12 +52,20 @@ interface StorySectionProps {
 }
 
 export default function StorySection({ showOverlay }: StorySectionProps) {
+  const theme = useTheme();
+  const isExtralargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
+
   return (
     <CustomStorySection>
       <img src={doodle} alt="doodle" />
       {!showOverlay && (
         <StoryContainer>
-          <StoryTitle variant="h2">THE BEGINNING</StoryTitle>
+          <StoryTitle
+            sx={{ fontSize: isExtralargeScreen ? "3.25rem" : "3rem" }}
+            variant="h2"
+          >
+            THE BEGINNING
+          </StoryTitle>
           <StoryInfo variant="h5">
             It’s 2030 or something. Doping is legal now. There’s no scratched
             faces no more. Sugar’s sold at groceries. Shrooms are sold with
