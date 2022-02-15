@@ -16,7 +16,7 @@ const LegendarySection = CustomStyled(Box)(({ theme }) => ({
 const LegendaryTitle = CustomStyled(Typography)(({ theme }) => ({
   fontFamily: Fonts.BebasNeue,
   fontSize: "2.25rem",
-  color: Colors.PRIMARY,
+  color: Colors.SECONDARY,
   textAlign: "center",
   marginBottom: theme.spacing(2),
 }));
