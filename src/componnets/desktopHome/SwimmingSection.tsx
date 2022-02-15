@@ -1,13 +1,11 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 import React from "react";
 import swimmingImg from "../../assets/images/swimming.png";
 
 const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
-  // padding: theme.spacing(0, 15),
   background: Colors.PRIMARY,
-  // height: "300px",
   width: "103%",
   marginBottom: theme.spacing(20),
 }));
@@ -28,11 +26,10 @@ const CustomSwimmingSection = CustomStyled(Box)(({ theme }) => ({
 }));
 
 export default function SwimmingSection() {
-  const theme = useTheme();
   return (
     <SwimmingSectionContainer>
       <CustomSwimmingSection>
-        <Box width="50%" padding={"88px 0 0 96px"}>
+        <Box width="50%" padding={"0px 0 0 96px"} paddingTop={"8%"}>
           <CustomSwimmingTypo>
             A bunch of art people ran into the cats when they were fucking
             around on the streets. The artists bought some stuff from the cats,
