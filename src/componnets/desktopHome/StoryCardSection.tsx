@@ -207,8 +207,8 @@ export default function StoryCardSection({
                 meditate on{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>deez lines</span>{" "}
                 like I’m a priest blowin joints like in{" "}
-                <span style={{ color: Colors.STYLISH_GREEN }}>UFC</span> she wnt
-                <span style={{ color: Colors.STYLISH_GREEN }}>69</span> i wnt
+                <span style={{ color: Colors.STYLISH_GREEN }}>UFC</span> she wnt{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>69</span> i wnt{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>420</span> she
                 wanna catch a{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>vibe</span>,{" "}
