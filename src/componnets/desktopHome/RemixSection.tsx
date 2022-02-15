@@ -7,11 +7,8 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import slider from "../../assets/images/slider.png";
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
-  // height: "300px",
-  // width: "99vw",
   width: "103%",
-  marginTop: theme.spacing(-22),
-  // border: "1px solid brown",
+  marginTop: theme.spacing(-30),
   background: Colors.SECONDARY,
   padding: "2px 0px",
   display: "flex",
@@ -44,7 +41,7 @@ const ScrollingContainer = CustomStyled(Box)(({ theme }) => ({
 
 const Scrolling = CustomStyled(Box)(({ theme }) => ({
   height: "70%",
-  width: "200%",
+  width: "300%",
   // padding: theme.spacing(2),
   background: `url(${slider})`,
   backgroundRepeat: "repeat-x",
@@ -64,7 +61,7 @@ const Scrolling = CustomStyled(Box)(({ theme }) => ({
 
 const FeaturedContainer = CustomStyled(Box)(({ theme }) => ({
   display: "flex",
-  marginRight: theme.spacing(1),
+  marginRight: theme.spacing(0.5),
   "& svg": {
     height: "12px",
     width: "12px",
@@ -76,7 +73,7 @@ const FeaturedContainer = CustomStyled(Box)(({ theme }) => ({
 const FeaturedTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
-  marginRight: theme.spacing(1.2),
+  marginRight: theme.spacing(1),
   textTransform: "uppercase",
   letterSpacing: "-0.011em",
 }));

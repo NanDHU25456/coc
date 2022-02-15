@@ -32,7 +32,7 @@ export default function SwimmingSection() {
   return (
     <SwimmingSectionContainer>
       <CustomSwimmingSection>
-        <Box width="50%" padding={theme.spacing(10, 0, 0, 12)}>
+        <Box width="50%" padding={"88px 0 0 96px"}>
           <CustomSwimmingTypo>
             A bunch of art people ran into the cats when they were fucking
             around on the streets. The artists bought some stuff from the cats,

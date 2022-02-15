@@ -1,8 +1,7 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
 import React from "react";
 import doodle from "../../assets/images/doodle.png";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
@@ -66,7 +65,7 @@ export default function StorySection({ showOverlay }: StorySectionProps) {
           >
             THE BEGINNING
           </StoryTitle>
-          <StoryInfo variant="h5">
+          <StoryInfo variant="h6">
             It’s 2030 or something. Doping is legal now. There’s no scratched
             faces no more. Sugar’s sold at groceries. Shrooms are sold with
             veggies. No one’s gotta wriggle down a forest in the middle of the
@@ -76,7 +75,7 @@ export default function StorySection({ showOverlay }: StorySectionProps) {
             bullshit catfights, posting their own mugshots, cat calling the cops
             and stirring whatever rat shit they can to keep the high going.
           </StoryInfo>
-          <StoryInfo variant="h5">
+          <StoryInfo variant="h6">
             <br />
             Bro, this litter don’t know shit about how to clean up.
           </StoryInfo>

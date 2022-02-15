@@ -29,12 +29,15 @@ export const Colors = {
   SECONDARY: "#ffffff",
   blackBackground: "#0F0F0F",
   BLUE: "#79D0D7",
+  YELLOW: "#FCFF00",
+  STYLISH_GREEN: "#06969F",
 };
 
 export const Fonts = {
   BebasNeue: "Bebas Neue",
   Balsamic: "Balsamiq Sans",
   Poppins: "Poppins",
+  Cedarville: "Cedarville Cursive",
 };
 
 export const Transition = {

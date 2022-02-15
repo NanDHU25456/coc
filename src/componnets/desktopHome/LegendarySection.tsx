@@ -17,28 +17,17 @@ const CustomLegendarySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
   height: "auto",
   display: "flex",
-  padding: theme.spacing(8, 0),
-  // alignItems: "center",
-  // justifyContent: "center",
   "& img": {
     height: "100%",
     width: "100%",
   },
 }));
 
-// const LegendaryTitle = CustomStyled(Box)(({ theme }) => ({
-//   fontFamily: Fonts.BebasNeue,
-//   fontSize: "12rem",
-//   color: Colors.SECONDARY,
-//   maxWidth: "100%",
-// }));
-
 export default function LegendarySection() {
   return (
     <LegendarySectionContainer>
       <CustomLegendarySection>
         <img src={legendary} alt="legendary" />
-        {/* <LegendaryTitle>THE LEGENDARY CATS</LegendaryTitle> */}
       </CustomLegendarySection>
     </LegendarySectionContainer>
   );

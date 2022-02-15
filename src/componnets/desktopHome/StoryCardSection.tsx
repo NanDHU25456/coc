@@ -57,8 +57,8 @@ const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
 
 const StoryCardExtraContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-230px",
-  left: "6%",
+  top: "-270px",
+  left: "8%",
   width: "400px",
   height: "300px",
   zIndex: 1,
@@ -68,18 +68,17 @@ const StoryCardExtraContainer = CustomStyled(Box)(({ theme }) => ({
     width: "60px",
     position: "absolute",
     top: "220px",
-    left: "55%",
+    left: "56%",
     zindex: 2,
     cursor: "pointer",
   },
 }));
 
 const StoryExtraInfo = CustomStyled(Typography)(({ theme }) => ({
-  opacity: 0.4,
-  color: Colors.SECONDARY,
-  fontFamily: Fonts.Balsamic,
+  opacity: 0.6,
+  color: Colors.YELLOW,
+  fontFamily: Fonts.Cedarville,
   width: "60%",
-  // zIndex: 9,
 }));
 
 type titleStringType = { [Key: string]: string };
@@ -92,7 +91,7 @@ interface StoryCard {
   storyCardStyle: BoxProps;
   info: string;
   newLine?: string;
-  extra?: string;
+  extra?: boolean;
 }
 
 export const storyCards: StoryCard[] = [
@@ -113,8 +112,8 @@ export const storyCards: StoryCard[] = [
     image: moneyImg,
     mobileImage: moneyMobile,
     title: "MONEY",
-    titleStyle: { top: "-60px", left: "100px" },
-    storyCardStyle: { width: "285px", top: "-120px", left: "210px" },
+    titleStyle: { top: "-60px", left: "120px" },
+    storyCardStyle: { width: "285px", top: "-120px", left: "230px" },
     info: `Before you know it, you’re walking with them too. And you’re dealing
             their crack and stuff. No one gives a flying fuck about money. You
             deal crack in crack and there ain’t no crack head in town who can
@@ -124,8 +123,8 @@ export const storyCards: StoryCard[] = [
     image: enlightmentImg,
     mobileImage: enlightmentMobile,
     title: "ENLIGHTMENT",
-    titleStyle: { top: "-60px", right: "440px" },
-    storyCardStyle: { width: "400px", top: "-120px", right: "20px" },
+    titleStyle: { top: "-60px", right: "460px" },
+    storyCardStyle: { width: "400px", top: "-120px", right: "60px" },
     info: `And then just casually, one someday, you go to a cafe, and end up
             licking rainbow fcking milk that a rocket no shit scientisit made
             and the sun starts to shine out of your ass. You suddenly have 3
@@ -136,15 +135,15 @@ export const storyCards: StoryCard[] = [
     image: communityImg,
     mobileImage: communityMobile,
     title: "COMMUNITY",
-    titleStyle: { top: "-60px", right: "340px" },
-    storyCardStyle: { width: "285px", top: "-120px", right: "40px" },
+    titleStyle: { top: "-60px", right: "360px" },
+    storyCardStyle: { width: "285px", top: "-120px", right: "60px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
             again. It’s a whole cult and shit. You get everyone to vote and all,
             decide for themselves and get the world spinnin like your head on
             meth.`,
     newLine: `So, mofo, let’s trip, flip and rip the fucking world by our
             claws`,
-    extra: `catsoncrackoncra high on pussycat she msged GM i dnt msg back meditate on deez lines like I’m a priest blowin joints like in UFC she wnt 69 i wnt 420 she wanna catch a vibe, girl i got plenty catsoncra make me feel num jpegs i be dealin m take my sol n spare me I got degen energy`,
+    extra: true,
   },
 ];
 
@@ -199,7 +198,31 @@ export default function StoryCardSection({
           </StoryCardInfoContainer>
           {storyCard.extra && (
             <StoryCardExtraContainer>
-              <StoryExtraInfo variant="body1">{storyCard.extra}</StoryExtraInfo>
+              <StoryExtraInfo variant="body1">
+                catsoncrackoncra high on pussycat she msged{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>GM</span>{" "}
+                <span style={{ textDecoration: "underline" }}>
+                  i dnt msg back
+                </span>{" "}
+                meditate on{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>deez lines</span>{" "}
+                like I’m a priest blowin joints like in{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>UFC</span> she wnt
+                <span style={{ color: Colors.STYLISH_GREEN }}>69</span> i wnt
+                <span style={{ color: Colors.STYLISH_GREEN }}>420</span> she
+                wanna catch a{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>vibe</span>,{" "}
+                <span style={{ textDecoration: "underline" }}>
+                  girl i got plenty
+                </span>{" "}
+                catsoncra make me feel num{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>jpegs</span> i be
+                dealin m take my{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>sol</span> n spare
+                me I got{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>degen</span>{" "}
+                energy
+              </StoryExtraInfo>
               <img
                 onClick={onClickImage}
                 src={isPlaying ? communityPlay : communityPause}
@@ -209,7 +232,7 @@ export default function StoryCardSection({
           )}
         </StoryCardImageContainer>
       ))}
-      <audio ref={audioRef} id="audio" autoPlay loop>
+      <audio ref={audioRef} id="audio-1" loop>
         <source src={communityAudio} type="audio/mpeg" />
       </audio>
     </CustomStoryCardSection>
