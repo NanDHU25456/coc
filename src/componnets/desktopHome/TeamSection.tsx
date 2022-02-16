@@ -87,7 +87,7 @@ export const teams: TeamProps[] = [
   {
     image: peblo,
     title: "peblo",
-    info: `this guy is the ceo.he knows everything..`,
+    info: `this guy is the ceo. He knows everything..`,
   },
   {
     image: gestavo,
