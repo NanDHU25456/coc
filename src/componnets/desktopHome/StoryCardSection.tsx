@@ -1,18 +1,18 @@
 import { Box, BoxProps, Typography, useTheme } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { useRef, useState } from "react";
-
-import communityImg from "../../assets/images/community.png";
 import communityMobile from "../../assets/images/community-mobile.png";
 import communityPause from "../../assets/images/community-pause.png";
 import communityPlay from "../../assets/images/community-play.png";
-import enlightmentImg from "../../assets/images/enlightment.png";
+import communityImg from "../../assets/images/community.png";
 import enlightmentMobile from "../../assets/images/enlightment-mobile.png";
-import merchImg from "../../assets/images/merch.png";
+import enlightmentImg from "../../assets/images/enlightment.png";
 import merchMobile from "../../assets/images/merch-mobile.png";
-import moneyImg from "../../assets/images/money.png";
+import merchImg from "../../assets/images/merch.png";
 import moneyMobile from "../../assets/images/money-mobile.png";
+import moneyImg from "../../assets/images/money.png";
 import playOnlyOneAudio from "../../utils/helper/audio/audioHelper";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+
 
 export const communityAudio = require("../../assets/audio/community-audio.mpeg");
 
@@ -58,18 +58,19 @@ const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
 
 const StoryCardExtraContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-270px",
+  top: "-300px",
   left: "8%",
-  width: "400px",
+  width: "40%",
   height: "300px",
   zIndex: 1,
   display: "flex",
+  letterSpacing: "-0.011em",
   "& img": {
     height: "60px",
     width: "60px",
-    position: "absolute",
-    top: "220px",
-    left: "56%",
+    position: "relative",
+    top: "250px",
+    left: "-10%",
     zindex: 2,
     cursor: "pointer",
   },
@@ -208,27 +209,27 @@ export default function StoryCardSection({
           {storyCard.extra && (
             <StoryCardExtraContainer>
               <StoryExtraInfo variant="body1">
-                catsoncrackoncra high on pussycat she msged{" "}
-                <span style={{ color: Colors.STYLISH_GREEN }}>GM</span>{" "}
+                catsoncrackoncra <br /> high on pussycat <br /> she msged{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>GM</span>  <br />{" "}
                 <span style={{ textDecoration: "underline" }}>
                   i dnt msg back
-                </span>{" "}
+                </span> <br />{" "}
                 meditate on{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>deez lines</span>{" "}
-                like I’m a priest blowin joints like in{" "}
-                <span style={{ color: Colors.STYLISH_GREEN }}>UFC</span> she wnt{" "}
+                like I’m a priest  <br /> blowin joints like in{" "}
+                <span style={{ color: Colors.STYLISH_GREEN }}>UFC</span> <br /> she wnt{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>69</span> i wnt{" "}
-                <span style={{ color: Colors.STYLISH_GREEN }}>420</span> she
+                <span style={{ color: Colors.STYLISH_GREEN }}>420</span> <br />  she
                 wanna catch a{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>vibe</span>,{" "}
                 <span style={{ textDecoration: "underline" }}>
                   girl i got plenty
-                </span>{" "}
-                catsoncra make me feel num{" "}
+                </span>{" "} <br />
+                catsoncra make me feel num{" "} <br />
                 <span style={{ color: Colors.STYLISH_GREEN }}>jpegs</span> i be
-                dealin m take my{" "}
+                dealin m <br /> take my{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>sol</span> n spare
-                me I got{" "}
+                me <br /> I got{" "}
                 <span style={{ color: Colors.STYLISH_GREEN }}>degen</span>{" "}
                 energy
               </StoryExtraInfo>
