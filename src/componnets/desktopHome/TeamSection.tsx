@@ -81,6 +81,8 @@ const TeamExtraInfo = CustomStyled(Typography)(({ theme }) => ({
   textAlign: "right",
   margin: 0,
   width: "100%",
+  letterSpacing: "-0.011em",
+
 }));
 
 export const teams: TeamProps[] = [
@@ -112,7 +114,7 @@ export const teams: TeamProps[] = [
   {
     image: Efnefknf,
     title: "Efnefknf",
-    info: `Discontent Creator.`,
+    info: `Discontent Creator. Good with words.`,
   },
   {
     image: alcepon,
@@ -122,7 +124,7 @@ export const teams: TeamProps[] = [
   {
     image: dev,
     title: "Dev-illegit",
-    info: `Draws characters. Drawn to characters.`,
+    info: `Scraping RUST off the chain.`,
   },
 ];
 

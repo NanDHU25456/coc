@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
 import React from "react";
 import swimmingImg from "../../assets/images/swimming.png";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+
 
 const SwimmingSectionContainer = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
@@ -16,6 +16,18 @@ const CustomSwimmingTypo = CustomStyled(Typography)(({ theme }) => ({
   opacity: 0.8,
   textAlign: "left",
   variant: "body1",
+  marginTop: theme.spacing(2),
+}));
+
+const CustomArtistTypo = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.Cedarville,
+  fontSize: "24px",
+  fontWeight: "100",
+  lineHeight: "29px",
+  letterSpacing: "-0.011em",
+  textAlign: "right",
+  variant: "body1",
+  color: "#4b4747",
   marginTop: theme.spacing(2),
 }));
 
@@ -40,6 +52,10 @@ export default function SwimmingSection() {
             they’re all high, these pictures are gonna be wonky af version of
             the artists’ minds.
           </CustomSwimmingTypo>
+          <CustomArtistTypo>
+            These artists are dope. <br />
+            These artists are on dope.
+          </CustomArtistTypo>
         </Box>
         <Box
           width="50%"

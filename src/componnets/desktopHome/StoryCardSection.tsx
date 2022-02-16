@@ -58,19 +58,18 @@ const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
 
 const StoryCardExtraContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-300px",
+  top: "-270px",
   left: "8%",
   width: "40%",
   height: "300px",
   zIndex: 1,
   display: "flex",
-  letterSpacing: "-0.011em",
   "& img": {
     height: "60px",
     width: "60px",
     position: "relative",
     top: "250px",
-    left: "-10%",
+    left: "-27%",
     zindex: 2,
     cursor: "pointer",
   },
@@ -80,6 +79,7 @@ const StoryExtraInfo = CustomStyled(Typography)(({ theme }) => ({
   opacity: 0.6,
   color: Colors.YELLOW,
   fontFamily: Fonts.Cedarville,
+  letterSpacing: "-0.011em",
   width: "60%",
 }));
 
@@ -106,22 +106,20 @@ export const storyCards: StoryCard[] = [
     titleStyle: { top: "-60px", right: "430px" },
     storyCardStyle: { width: "285px", top: "-100px", right: "140px" },
     info: `Everytime a cat ain’t got no clue what he’s smoking, things start to get real lit, real soon. He gets a bunch of other cats. And they all become a pack.`,
-    newLine: `Now they’re walking the streets, looking all woke.
-            Their sweats are cool, their caps got skulls and their skulls got
-            caps. The streets are full of these cool cats wearing dope af shift.`,
-  },
-  {
+    newLine: `Now they’re walking the streets, looking all woke. Their sweats are cool, their caps got skulls and their skulls got caps. The streets are full of these cool cats wearing dope AF shit.`,
+  }, {
     image: moneyImg,
     mobileImage: moneyMobile,
     title: "Smokin’",
     title2: "Money",
-    titleStyle2: { top: "-20px", left: "120px" },
-    titleStyle: { top: "-70px", left: "120px" },
+    titleStyle2: { top: "20px", left: "120px" },
+    titleStyle: { top: "-30px", left: "120px" },
     storyCardStyle: { width: "285px", top: "-120px", left: "240px" },
-    info: `Before you know it, you’re walking with them too. And you’re dealing
-            their crack and stuff. No one gives a flying fuck about money. You
-            deal crack in crack and there ain’t no crack head in town who can
-            mess with ya. By now, you’re money.`,
+    info: `Before you know it, you’re walking with them too. 
+        And you’re dealing their crack and stuff. 
+        No one gives a flying fuck about money. 
+        You deal $CRECK in $CRECK and there ain’t no crack head
+        in town who can mess with ya. By now, YOU’RE MONEY!`,
   },
   {
     image: enlightmentImg,
@@ -139,7 +137,7 @@ export const storyCards: StoryCard[] = [
     image: communityImg,
     mobileImage: communityMobile,
     title: "crew af",
-    titleStyle: { top: "-20px", right: "360px" },
+    titleStyle: { top: "5px", right: "360px" },
     storyCardStyle: { width: "285px", top: "-120px", right: "60px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
             again. It’s a whole cult and shit. You get everyone to vote and all,

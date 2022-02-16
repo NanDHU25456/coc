@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { useRef, useState } from "react";
-
 import communityPause from "../../assets/images/community-pause.png";
 import communityPlay from "../../assets/images/community-play.png";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import { remixImages } from "../home/DesktopHome";
+
 
 export const communityAudio = require("../../assets/audio/community-audio.mpeg");
 
@@ -31,6 +31,15 @@ const LegendaryInfo = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   opacity: 0.8,
   textAlign: "center",
+  marginTop: theme.spacing(2),
+}));
+
+const ArtistInfo = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.Cedarville,
+  color: "#4b4747",
+  fontSize: "20px",
+  opacity: 0.8,
+  textAlign: "right",
   marginTop: theme.spacing(2),
 }));
 
@@ -137,6 +146,10 @@ export default function MobileLegendarySection({
         would paint pictures of the cats. But since they’re all high, these
         pictures are gonna be wonky af version of the artists’ minds.
       </LegendaryInfo>
+      <ArtistInfo variant="body2">
+        These artists are dope. <br />
+        These artists are on dope.
+      </ArtistInfo>
       <audio ref={audioRef} id="audio-1" loop>
         <source src={communityAudio} type="audio/mpeg" />
       </audio>
