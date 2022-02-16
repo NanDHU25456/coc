@@ -1,11 +1,11 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import React, { useState } from "react";
 
 import BackgroundLayout from "../layout/BackgroundLayout";
 import CrackHouseSection from "../desktopHome/CrackHouseSection";
 import FooterSection from "../desktopHome/FooterSection";
 import HeroSection from "../desktopHome/HeroSection";
 import LegendarySection from "../desktopHome/LegendarySection";
+import React from "react";
 import RemixSection from "../desktopHome/RemixSection";
 import StoryCardSection from "../desktopHome/StoryCardSection";
 import StorySection from "../desktopHome/StorySection";
@@ -32,8 +32,6 @@ export default function DesktopHome({
   playing,
   showOverlay,
 }: DesktopHomeProps) {
-  const [showQuestion, setShowQuestion] = useState(true);
-  const imageList = showQuestion ? questionsImages : remixImages;
   const theme = useTheme();
   const isExtralargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 
@@ -58,7 +56,10 @@ export default function DesktopHome({
         <VisionSection />
         <StoryCardSection playing={playing} toggle={toggle} />
         <LegendarySection />
-        <RemixSection imageList={imageList} setShowQuestion={setShowQuestion} />
+        <RemixSection
+          questionImages={questionsImages}
+          remixImages={remixImages}
+        />
         <SwimmingSection />
         <TeamSection playing={playing} toggle={toggle} />
         {isExtralargeScreen && <FooterSection />}

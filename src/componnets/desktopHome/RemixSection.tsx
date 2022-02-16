@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import Ticker from "react-ticker";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -73,19 +73,56 @@ const RemixGradientContainer = CustomStyled(Box)(({ theme }) => ({
 }));
 
 interface RemixSectionProps {
-  imageList: string[];
-  setShowQuestion: (val: boolean) => void;
+  questionImages: string[];
+  remixImages: string[];
 }
 
 export default function RemixSection({
-  imageList,
-  setShowQuestion,
+  questionImages,
+  remixImages,
 }: RemixSectionProps) {
+  const [show, setShow] = useState<{ [key: number]: boolean }>({
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+  });
+
+  const onMouseEnter = (i: number) => {
+    const newShow: any = {};
+
+    for (let index = 0; index < 5; index++) {
+      newShow[index] = index === i ? true : false;
+    }
+
+    setShow(newShow);
+  };
+
+  const getImage = (i: number) => {
+    if (show[i]) {
+      return remixImages[i];
+    }
+
+    return questionImages[i];
+  };
+
   return (
     <CustomRemixSection>
-      <RemixImageContainer onMouseEnter={() => setShowQuestion(false)}>
-        {imageList.map((val, i) => (
-          <img src={val} alt="remix" key={i} />
+      <RemixImageContainer>
+        {questionImages.map((val, i) => (
+          <img
+            onMouseEnter={() => onMouseEnter(i)}
+            onMouseOut={() =>
+              setShow({
+                ...show,
+                [i]: false,
+              })
+            }
+            src={getImage(i)}
+            alt="remix"
+            key={i}
+          />
         ))}
       </RemixImageContainer>
       <RemixGradientContainer />

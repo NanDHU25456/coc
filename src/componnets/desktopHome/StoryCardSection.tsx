@@ -241,7 +241,12 @@ export default function StoryCardSection({
           )}
         </StoryCardImageContainer>
       ))}
-      <audio ref={audioRef} id="audio-1" loop>
+      <audio
+        onPause={() => setIsPlaying(false)}
+        ref={audioRef}
+        id="audio-1"
+        loop
+      >
         <source src={communityAudio} type="audio/mpeg" />
       </audio>
     </CustomStoryCardSection>

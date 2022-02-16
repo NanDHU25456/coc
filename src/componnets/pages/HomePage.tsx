@@ -5,6 +5,7 @@ import React, { useCallback, useRef, useState } from "react";
 import DesktopHome from "../home/DesktopHome";
 import HomeOverlay from "../home/HomeOverlay";
 import MobileHome from "../home/MobileHome";
+import playoneAudio from "../../utils/helper/audio/audioHelper";
 
 export const catAudio = require("../../assets/audio/cat-audio.mp4");
 
@@ -42,6 +43,7 @@ export default function HomePage() {
     try {
       if (audioRef && audioRef.current) {
         // console.log("playing..", playing);
+        playoneAudio("audio");
         if (!playing) {
           audioRef.current.play();
         } else {
@@ -56,7 +58,7 @@ export default function HomePage() {
 
   return (
     <Box height="100vh" overflow={showOverlay ? "hidden" : "auto"}>
-      <audio ref={audioRef} id="audio" loop>
+      <audio onPause={() => setPlaying(false)} ref={audioRef} id="audio" loop>
         <source src={catAudio} type="audio/mpeg" />
       </audio>
       {showOverlay && (

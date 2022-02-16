@@ -187,7 +187,12 @@ export default function TeamSection({
           alt="pause"
         />
       </TeamSongContainer>
-      <audio ref={audioRef} id="audio-2" loop>
+      <audio
+        onPause={() => setIsPlaying(false)}
+        ref={audioRef}
+        id="audio-2"
+        loop
+      >
         <source src={communityAudio} type="audio/mpeg" />
       </audio>
     </CustomTeamSection>
