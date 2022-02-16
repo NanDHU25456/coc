@@ -107,8 +107,7 @@ export const storyCards: StoryCard[] = [
     storyCardStyle: { width: "285px", top: "-100px", right: "140px" },
     info: `Everytime a cat ain’t got no clue what he’s smoking, things start to get real lit, real soon. He gets a bunch of other cats. And they all become a pack.`,
     newLine: `Now they’re walking the streets, looking all woke. Their sweats are cool, their caps got skulls and their skulls got caps. The streets are full of these cool cats wearing dope AF shit.`,
-  },
-  {
+  }, {
     image: moneyImg,
     mobileImage: moneyMobile,
     title: "Smokin’",
