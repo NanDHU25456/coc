@@ -100,21 +100,21 @@ export default function CrackHouseSection() {
         <CracDescContainer>
           <CrackDesc variant="h5">
             {" "}
-            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>SUPPLY :</span>
+            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>SUPPLY: </span>
             6,969
           </CrackDesc>
           <FontAwesomeIcon color={Colors.SECONDARY} icon={faCircle} />
           <CrackDesc variant="h5">
             {" "}
-            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>PRICE :</span>
+            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>PRICE: </span>
             TBD
           </CrackDesc>
           <FontAwesomeIcon color={Colors.SECONDARY} icon={faCircle} />
           <CrackDesc variant="h5">
             {" "}
             <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>
-              MINT DATE :
-            </span>
+              MINT DATE:
+            </span>{" "}
             TBD
           </CrackDesc>
         </CracDescContainer>

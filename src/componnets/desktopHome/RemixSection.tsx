@@ -51,18 +51,23 @@ const FeaturedTitle = CustomStyled(Typography)(({ theme }) => ({
   letterSpacing: "-0.011em",
 }));
 
+const ScrollingContainer = CustomStyled("div")(({ theme }) => ({
+  display: "flex",
+  position: "relative",
+  "& svg": {
+    height: "12px",
+    width: "12px",
+    fontSize: "12px",
+    margin: "25px 8px",
+  },
+}));
+
 const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
   textTransform: "uppercase",
   fontSize: "3rem",
-  "& svg": {
-    height: "12px",
-    width: "12px",
-    fontSize: "12px",
-    marginTop: theme.spacing(1),
-    marginRight: "8px",
-  },
+  whiteSpace: "nowrap",
 }));
 
 const RemixGradientContainer = CustomStyled(Box)(({ theme }) => ({
@@ -140,11 +145,27 @@ export default function RemixSection({
         <>
           <Ticker speed={6}>
             {({ index }) => (
-              <div style={{ display: "flex" }}>
-                <ScrollingTitle style={{ whiteSpace: "nowrap" }}>
+              <ScrollingContainer>
+                <ScrollingTitle>AZAY.KUN</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>????</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>THE SAFRON CONCEPT</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>????</ScrollingTitle>
+                <ScrollingTitle>THE ARTIST SPUD </ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>????</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>ART.THAMBI</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <ScrollingTitle>????</ScrollingTitle>
+                <ScrollingTitle>ERANAM</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                {/* <ScrollingTitle style={{ whiteSpace: "nowrap" }}>
                   {`AZAY.KUN ????? THE SAFRON CONCEPT ???? THE ARTIST SPUD ????? ART.THAMBI ???? ERANAM ?????`}
-                </ScrollingTitle>
-              </div>
+                </ScrollingTitle> */}
+              </ScrollingContainer>
             )}
           </Ticker>
         </>

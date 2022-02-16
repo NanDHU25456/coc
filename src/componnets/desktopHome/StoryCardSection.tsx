@@ -115,8 +115,8 @@ export const storyCards: StoryCard[] = [
     mobileImage: moneyMobile,
     title: "Smokin’",
     title2: "Money",
-    titleStyle2: { top: "-60px", left: "120px" },
-    titleStyle: { top: "-110px", left: "120px" },
+    titleStyle2: { top: "-20px", left: "120px" },
+    titleStyle: { top: "-70px", left: "120px" },
     storyCardStyle: { width: "285px", top: "-120px", left: "240px" },
     info: `Before you know it, you’re walking with them too. And you’re dealing
             their crack and stuff. No one gives a flying fuck about money. You
@@ -127,7 +127,7 @@ export const storyCards: StoryCard[] = [
     image: enlightmentImg,
     mobileImage: enlightmentMobile,
     title: "enlightenment",
-    titleStyle: { top: "-60px", right: "460px" },
+    titleStyle: { top: "-20px", right: "460px" },
     storyCardStyle: { width: "400px", top: "-120px", right: "60px" },
     info: `And then just casually, one someday, you go to a cafe, and end up
             licking rainbow fcking milk that a rocket no shit scientisit made
@@ -139,7 +139,7 @@ export const storyCards: StoryCard[] = [
     image: communityImg,
     mobileImage: communityMobile,
     title: "crew af",
-    titleStyle: { top: "-60px", right: "360px" },
+    titleStyle: { top: "-20px", right: "360px" },
     storyCardStyle: { width: "285px", top: "-120px", right: "60px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
             again. It’s a whole cult and shit. You get everyone to vote and all,
