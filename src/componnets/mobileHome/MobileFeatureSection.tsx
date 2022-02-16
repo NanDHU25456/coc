@@ -1,13 +1,14 @@
-import { Colors, CustomStyled } from "../../utils/styles/DefaultTheme";
+import { Box, Typography } from "@mui/material";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
-import { Box } from "@mui/material";
 import React from "react";
+import Ticker from "react-ticker";
 import featuredArtist from "../../assets/images/featuredArtist.png";
 import slider from "../../assets/images/slider.png";
 
 const FeatureSeection = CustomStyled(Box)(({ theme }) => ({
   background: Colors.SECONDARY,
-  height: "120px",
+  height: "auto",
   width: "100%",
 }));
 
@@ -41,13 +42,32 @@ const Scrolling = CustomStyled(Box)(({ theme }) => ({
   },
 }));
 
+const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
+  color: Colors.PRIMARY,
+  fontFamily: Fonts.BebasNeue,
+  textTransform: "uppercase",
+  fontSize: "1.2rem",
+}));
+
 export default function MobileFeatureSection() {
   return (
     <FeatureSeection>
       <FeatureTitleSection />
-      <ScrollingContainer>
-        <Scrolling />
-      </ScrollingContainer>
+      <Box marginTop={1}>
+        <>
+          <Ticker speed={6}>
+            {({ index }) => (
+              <div style={{ display: "flex" }}>
+                <ScrollingTitle>
+                  {
+                    "AZAY.KUN ????? THE SAFRON CONCEPT ???? THE ARTIST SPUD ????? ART.THAMBI ???? ERANAM ?????"
+                  }
+                </ScrollingTitle>
+              </div>
+            )}
+          </Ticker>
+        </>
+      </Box>
     </FeatureSeection>
   );
 }

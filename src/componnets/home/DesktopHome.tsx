@@ -60,7 +60,7 @@ export default function DesktopHome({
         <LegendarySection />
         <RemixSection imageList={imageList} setShowQuestion={setShowQuestion} />
         <SwimmingSection />
-        <TeamSection />
+        <TeamSection playing={playing} toggle={toggle} />
         {isExtralargeScreen && <FooterSection />}
       </Box>
       {!isExtralargeScreen && <FooterSection />}

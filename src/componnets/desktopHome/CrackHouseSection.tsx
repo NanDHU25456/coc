@@ -6,7 +6,9 @@ import {
   Transition,
 } from "../../utils/styles/DefaultTheme";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const CarckHosueSection = CustomStyled(Box)(({ theme }) => ({
   borderTop: `3px solid ${Colors.SECONDARY}`,
@@ -52,9 +54,33 @@ const CrackInfo = CustomStyled(Typography)(({ theme }) => ({
   opacity: 0.8,
   width: "60%",
   marginTop: theme.spacing(5),
+  marginBottom: theme.spacing(6),
   [theme.breakpoints.up("xl")]: {
     width: "50%",
   },
+}));
+
+const CracDescContainer = CustomStyled(Box)(({ theme }) => ({
+  display: "flex",
+  width: "58%",
+  justifyContent: "center",
+  alignItems: "center",
+  [theme.breakpoints.up("xl")]: {
+    width: "50%",
+  },
+  "& svg": {
+    width: "12px",
+    height: "12px",
+    fontSize: "12px",
+    color: Colors.SECONDARY,
+    margin: theme.spacing(0, 3),
+  },
+}));
+
+const CrackDesc = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.Balsamic,
+  color: Colors.SECONDARY,
+  textAlign: "center",
 }));
 
 export default function CrackHouseSection() {
@@ -65,13 +91,33 @@ export default function CrackHouseSection() {
           <CrackTitle>WELCOME TO THE CRACKHOUSE</CrackTitle>
         </Box>
         <CrackInfo variant="h5">
-          Cats on Crack is a collection of 6,969 cat NFTs—unique digital
-          collectibles living on the Solana blockchain. Your Cat doubles as your
-          Club membership card, and grants access to members-only benefits.{" "}
-          <br />
-          Future areas and perks can be unlocked by the community through
-          roadmap activation.
+          Cats on Crack is a collection of 6,969 NFTs - dope digital
+          collectibles chilling on the Solana blockchain. If you’re part of the
+          crew, you get to hang out on SOL like a fkin lion. All benefits, perks
+          and dope shit will be unlocked as we slowly venture into the Cat
+          world. So, watch out!
         </CrackInfo>
+        <CracDescContainer>
+          <CrackDesc variant="h5">
+            {" "}
+            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>SUPPLY :</span>
+            6,969
+          </CrackDesc>
+          <FontAwesomeIcon color={Colors.SECONDARY} icon={faCircle} />
+          <CrackDesc variant="h5">
+            {" "}
+            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>PRICE :</span>
+            TBD
+          </CrackDesc>
+          <FontAwesomeIcon color={Colors.SECONDARY} icon={faCircle} />
+          <CrackDesc variant="h5">
+            {" "}
+            <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+              MINT DATE :
+            </span>
+            TBD
+          </CrackDesc>
+        </CracDescContainer>
       </CarckHosueSection>
     </Box>
   );

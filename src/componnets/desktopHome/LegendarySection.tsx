@@ -8,7 +8,7 @@ const LegendarySectionContainer = CustomStyled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 0),
   background: Colors.PRIMARY,
   height: "350px",
-  marginTop: theme.spacing(-1),
+  marginTop: theme.spacing(-2),
   width: "103%",
 }));
 
@@ -17,6 +17,7 @@ const CustomLegendarySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
   height: "auto",
   display: "flex",
+  paddingBottom: theme.spacing(8),
   "& img": {
     height: "100%",
     width: "100%",

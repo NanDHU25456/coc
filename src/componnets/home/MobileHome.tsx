@@ -25,6 +25,14 @@ const VisionSection = CustomStyled(Box)(({ theme }) => ({
     height: "100%",
   },
 }));
+
+const SongContainer = CustomStyled(Box)(({ theme }) => ({
+  background: Colors.PRIMARY,
+  height: "300px",
+  width: "100%",
+  overflowX: "hidden",
+}));
+
 interface MobileHomeProps {
   toggle: () => void;
   playing: boolean;
@@ -53,7 +61,8 @@ export default function MobileHome({
         <img src={ourVision} alt="vision" />
       </VisionSection>
       <MobileStoryCardSection />
-      <MobileLegendarySection />
+      <SongContainer></SongContainer>
+      <MobileLegendarySection toggle={toggle} playing={playing} />
       <MobileFeatureSection />
       <MobileTeamSection />
       <FooterSection />

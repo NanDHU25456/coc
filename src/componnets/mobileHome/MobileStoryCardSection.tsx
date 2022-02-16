@@ -27,7 +27,12 @@ export default function MobileStoryCardSection() {
     <StoryCardSection>
       {storyCards.map((storyCard) => (
         <Box key={storyCard.title} marginBottom={3}>
-          <StoryCardTitle>{storyCard.title}</StoryCardTitle>
+          <Box display="flex">
+            <StoryCardTitle>{storyCard.title}</StoryCardTitle>
+            {storyCard.title2 && (
+              <StoryCardTitle>{storyCard.title2}</StoryCardTitle>
+            )}
+          </Box>
           <img
             src={storyCard.mobileImage}
             alt="storyCard"

@@ -1,7 +1,8 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+
 import React from "react";
 import doodle from "../../assets/images/doodle.png";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 
 const CustomStorySection = CustomStyled(Box)(({ theme }) => ({
   width: "100%",
@@ -37,6 +38,7 @@ const StoryTitle = CustomStyled(Typography)(({ theme }) => ({
   fontFamily: Fonts.BebasNeue,
   color: Colors.SECONDARY,
   marginBottom: theme.spacing(2.2),
+  textTransform: "uppercase",
 }));
 
 const StoryInfo = CustomStyled(Typography)(({ theme }) => ({
@@ -63,20 +65,27 @@ export default function StorySection({ showOverlay }: StorySectionProps) {
             sx={{ fontSize: isExtralargeScreen ? "3.25rem" : "3rem" }}
             variant="h2"
           >
-            THE BEGINNING
+            Here’s the deal
           </StoryTitle>
           <StoryInfo variant="h6">
             It’s 2030 or something. Doping is legal now. There’s no scratched
-            faces no more. Sugar’s sold at groceries. Shrooms are sold with
+            faces no mo. Sugar’s sold at groceries. Shrooms are sold with
             veggies. No one’s gotta wriggle down a forest in the middle of the
-            night and there ain’t no more gun shots and shit. Everything’s
-            pretty chill. But the cats miss being hunted by them dogs. And
-            ofcourse, they miss that fucking OG prison cell. So, they’re picking
-            bullshit catfights, posting their own mugshots, cat calling the cops
-            and stirring whatever rat shit they can to keep the high going.
+            night and there ain’t no mo gun shots and shiz. Everything’s pretty
+            chill. But the cats miss being hunted by dem dogs.
           </StoryInfo>
           <StoryInfo variant="h6">
-            <br />
+            {" "}
+            So, it’s just a bunch of cool cats, who’re upto a whole of rat shit
+            that are livin’, and chillin’ and vibin’ together. They’re pickin
+            bullshit catfights, posting their own mugshots, cat calling the cops
+            and stirrin whatever they can to keep the high going. They’re too
+            clean now to be called a gang but too dirty to be called a fam. So
+            let’s just say it’s the coolest fucking crew or whatever that shit
+            is.
+          </StoryInfo>
+          <StoryInfo variant="h6">
+            {" "}
             Bro, this litter don’t know shit about how to clean up.
           </StoryInfo>
         </StoryContainer>

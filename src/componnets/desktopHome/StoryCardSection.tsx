@@ -87,7 +87,9 @@ interface StoryCard {
   image: string;
   mobileImage: string;
   title: string;
+  title2?: string;
   titleStyle: titleStringType;
+  titleStyle2?: titleStringType;
   storyCardStyle: BoxProps;
   info: string;
   newLine?: string;
@@ -98,12 +100,10 @@ export const storyCards: StoryCard[] = [
   {
     image: merchImg,
     mobileImage: merchMobile,
-    title: "MERCH",
+    title: "Merchanfuckindize",
     titleStyle: { top: "-60px", right: "430px" },
     storyCardStyle: { width: "285px", top: "-100px", right: "140px" },
-    info: `Everytime a cat ain’t got no clue what he’s smoking, things start to
-            get real lit, real soon. He gets a bunch of other cats. And they all
-            become a pack.`,
+    info: `Everytime a cat ain’t got no clue what he’s smoking, things start to get real lit, real soon. He gets a bunch of other cats. And they all become a pack.`,
     newLine: `Now they’re walking the streets, looking all woke.
             Their sweats are cool, their caps got skulls and their skulls got
             caps. The streets are full of these cool cats wearing dope af shift.`,
@@ -111,9 +111,11 @@ export const storyCards: StoryCard[] = [
   {
     image: moneyImg,
     mobileImage: moneyMobile,
-    title: "MONEY",
-    titleStyle: { top: "-60px", left: "120px" },
-    storyCardStyle: { width: "285px", top: "-120px", left: "230px" },
+    title: "Smokin’",
+    title2: "Money",
+    titleStyle2: { top: "-60px", left: "120px" },
+    titleStyle: { top: "-110px", left: "120px" },
+    storyCardStyle: { width: "285px", top: "-120px", left: "240px" },
     info: `Before you know it, you’re walking with them too. And you’re dealing
             their crack and stuff. No one gives a flying fuck about money. You
             deal crack in crack and there ain’t no crack head in town who can
@@ -134,7 +136,7 @@ export const storyCards: StoryCard[] = [
   {
     image: communityImg,
     mobileImage: communityMobile,
-    title: "COMMUNITY",
+    title: "crew af",
     titleStyle: { top: "-60px", right: "360px" },
     storyCardStyle: { width: "285px", top: "-120px", right: "60px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
@@ -190,6 +192,11 @@ export default function StoryCardSection({
           <StoryCardTitle style={storyCard.titleStyle} variant="h2">
             {storyCard.title}
           </StoryCardTitle>
+          {storyCard.title2 && (
+            <StoryCardTitle style={storyCard.titleStyle2} variant="h2">
+              {storyCard.title2}
+            </StoryCardTitle>
+          )}
           <StoryCardInfoContainer {...storyCard.storyCardStyle}>
             <StoryCardInfo variant="body1">{storyCard.info}</StoryCardInfo>
             {storyCard.newLine && (
