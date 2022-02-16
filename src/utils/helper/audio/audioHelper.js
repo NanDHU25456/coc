@@ -4,7 +4,9 @@ const playOnlyOneAudio = (currentId) => {
 
   filteredList.forEach(id => {
     const audioElement = document.getElementById(id)
-    audioElement.pause()
+    if (audioElement) {
+      audioElement.pause()
+    }
   })
 }
 
