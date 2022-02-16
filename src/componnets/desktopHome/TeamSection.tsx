@@ -11,6 +11,7 @@ import dashon from "../../assets/images/dashon.png";
 import dev from "../../assets/images/dev.png";
 import gestavo from "../../assets/images/gestavo.png";
 import peblo from "../../assets/images/peblo.png";
+import playOnlyOneAudio from "../../utils/helper/audio/audioHelper";
 import spud from "../../assets/images/spud.png";
 
 export const communityAudio = require("../../assets/audio/teamsong.mpeg");
@@ -141,9 +142,10 @@ export default function TeamSection({
     try {
       if (audioRef && audioRef.current) {
         // console.log("playing..", playing);
-        if (isMainAudioPlaying) {
-          toggle();
-        }
+        // if (isMainAudioPlaying) {
+        //   toggle();
+        // }
+        playOnlyOneAudio("audio-2");
         if (!isPlaying) {
           audioRef.current.play();
         } else {
@@ -165,12 +167,19 @@ export default function TeamSection({
       </Grid>
       <TeamSongContainer>
         <TeamExtraInfo variant="body1">
-          Let me begin, in the deep end, with my man Kingpin, let the
-          storytelling seep in, pretend it’s the weekend, of the year 2030, and
+          Let me begin, in the deep end, with my man{" "}
+          <span style={{ color: Colors.STYLISH_GREEN }}>Kingpin </span> , let
+          the storytelling seep in, pretend it’s the weekend, of the year{" "}
+          <span style={{ color: Colors.STYLISH_GREEN }}> 2030 </span>, and
           doping is legal… the end. sugar’s sold in the grocery stores, and
           nobody’s gotta wriggle down a forest no more, there’s no gun shots,
           and we’re not going to war with any dogs, they even sell shrooms in
-          the store, everything’s chill, couldn’t ask for more,
+          the store,{" "}
+          <span style={{ color: Colors.STYLISH_GREEN }}>
+            {" "}
+            everything's chill
+          </span>
+          , couldn’t ask for more,
         </TeamExtraInfo>
         <img
           onClick={onClickImage}

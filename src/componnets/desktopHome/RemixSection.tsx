@@ -55,7 +55,14 @@ const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
   textTransform: "uppercase",
-  fontSize: "2rem",
+  fontSize: "3rem",
+  "& svg": {
+    height: "12px",
+    width: "12px",
+    fontSize: "12px",
+    marginTop: theme.spacing(1),
+    marginRight: "8px",
+  },
 }));
 
 const RemixGradientContainer = CustomStyled(Box)(({ theme }) => ({
@@ -84,7 +91,7 @@ export default function RemixSection({
       <RemixGradientContainer />
       <Box height="auto">
         <>
-          <Ticker>
+          <Ticker move={false}>
             {({ index }) => (
               <FeaturedContainer style={{ display: "flex" }}>
                 <FeaturedTitle variant="h5">Featured Artist</FeaturedTitle>
@@ -92,29 +99,18 @@ export default function RemixSection({
               </FeaturedContainer>
             )}
           </Ticker>
-          {/* {new Array(10).fill("empty").map((val, i) => (
-            <FeaturedContainer flex={1} display="flex">
-              <FeaturedTitle variant="h5">Featured Artist</FeaturedTitle>
-              <FontAwesomeIcon icon={faCircle} />
-            </FeaturedContainer>
-          ))} */}
         </>
         <>
           <Ticker speed={6}>
             {({ index }) => (
               <div style={{ display: "flex" }}>
-                <ScrollingTitle>
-                  {
-                    "AZAY.KUN ????? THE SAFRON CONCEPT ???? THE ARTIST SPUD ????? ART.THAMBI ???? ERANAM ?????"
-                  }
+                <ScrollingTitle style={{ whiteSpace: "nowrap" }}>
+                  {`AZAY.KUN ????? THE SAFRON CONCEPT ???? THE ARTIST SPUD ????? ART.THAMBI ???? ERANAM ?????`}
                 </ScrollingTitle>
               </div>
             )}
           </Ticker>
         </>
-        {/* <ScrollingContainer>
-          <Scrolling></Scrolling>
-        </ScrollingContainer> */}
       </Box>
     </CustomRemixSection>
   );

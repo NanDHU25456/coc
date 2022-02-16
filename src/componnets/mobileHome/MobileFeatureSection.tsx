@@ -46,7 +46,7 @@ const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
   textTransform: "uppercase",
-  fontSize: "0.5rem",
+  fontSize: "2rem",
 }));
 
 export default function MobileFeatureSection() {
@@ -58,7 +58,7 @@ export default function MobileFeatureSection() {
           <Ticker speed={6}>
             {({ index }) => (
               <div style={{ display: "flex" }}>
-                <ScrollingTitle>
+                <ScrollingTitle style={{ whiteSpace: "nowrap" }}>
                   {
                     "AZAY.KUN ????? THE SAFRON CONCEPT ???? THE ARTIST SPUD ????? ART.THAMBI ???? ERANAM ?????"
                   }

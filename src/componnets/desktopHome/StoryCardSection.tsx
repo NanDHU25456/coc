@@ -12,6 +12,7 @@ import merchImg from "../../assets/images/merch.png";
 import merchMobile from "../../assets/images/merch-mobile.png";
 import moneyImg from "../../assets/images/money.png";
 import moneyMobile from "../../assets/images/money-mobile.png";
+import playOnlyOneAudio from "../../utils/helper/audio/audioHelper";
 
 export const communityAudio = require("../../assets/audio/community-audio.mpeg");
 
@@ -124,7 +125,7 @@ export const storyCards: StoryCard[] = [
   {
     image: enlightmentImg,
     mobileImage: enlightmentMobile,
-    title: "ENLIGHTMENT",
+    title: "enlightenment",
     titleStyle: { top: "-60px", right: "460px" },
     storyCardStyle: { width: "400px", top: "-120px", right: "60px" },
     info: `And then just casually, one someday, you go to a cafe, and end up
@@ -166,9 +167,10 @@ export default function StoryCardSection({
     try {
       if (audioRef && audioRef.current) {
         // console.log("playing..", playing);
-        if (isMainAudioPlaying) {
-          toggle();
-        }
+        // if (isMainAudioPlaying) {
+        //   toggle();
+        // }
+        playOnlyOneAudio("audio-1");
         if (!isPlaying) {
           audioRef.current.play();
         } else {
