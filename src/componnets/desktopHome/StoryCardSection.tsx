@@ -106,9 +106,7 @@ export const storyCards: StoryCard[] = [
     titleStyle: { top: "-60px", right: "430px" },
     storyCardStyle: { width: "285px", top: "-100px", right: "140px" },
     info: `Everytime a cat ain’t got no clue what he’s smoking, things start to get real lit, real soon. He gets a bunch of other cats. And they all become a pack.`,
-    newLine: `Now they’re walking the streets, looking all woke.
-            Their sweats are cool, their caps got skulls and their skulls got
-            caps. The streets are full of these cool cats wearing dope af shift.`,
+    newLine: `Now they’re walking the streets, looking all woke. Their sweats are cool, their caps got skulls and their skulls got caps. The streets are full of these cool cats wearing dope AF shit.`,
   },
   {
     image: moneyImg,
@@ -118,10 +116,11 @@ export const storyCards: StoryCard[] = [
     titleStyle2: { top: "20px", left: "120px" },
     titleStyle: { top: "-30px", left: "120px" },
     storyCardStyle: { width: "285px", top: "-120px", left: "240px" },
-    info: `Before you know it, you’re walking with them too. And you’re dealing
-            their crack and stuff. No one gives a flying fuck about money. You
-            deal crack in crack and there ain’t no crack head in town who can
-            mess with ya. By now, you’re money.`,
+    info: `Before you know it, you’re walking with them too. 
+        And you’re dealing their crack and stuff. 
+        No one gives a flying fuck about money. 
+        You deal $CRECK in $CRECK and there ain’t no crack head
+        in town who can mess with ya. By now, YOU’RE MONEY!`,
   },
   {
     image: enlightmentImg,
