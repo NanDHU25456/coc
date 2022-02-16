@@ -153,6 +153,8 @@ export default function RemixSection({
                 <ScrollingTitle>THE SAFRON CONCEPT</ScrollingTitle>
                 <FontAwesomeIcon icon={faCircle} />
                 <ScrollingTitle>????</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
+                <FontAwesomeIcon icon={faCircle} />
                 <ScrollingTitle>THE ARTIST SPUD </ScrollingTitle>
                 <FontAwesomeIcon icon={faCircle} />
                 <ScrollingTitle>????</ScrollingTitle>
@@ -160,6 +162,7 @@ export default function RemixSection({
                 <ScrollingTitle>ART.THAMBI</ScrollingTitle>
                 <FontAwesomeIcon icon={faCircle} />
                 <ScrollingTitle>????</ScrollingTitle>
+                <FontAwesomeIcon icon={faCircle} />
                 <ScrollingTitle>ERANAM</ScrollingTitle>
                 <FontAwesomeIcon icon={faCircle} />
                 {/* <ScrollingTitle style={{ whiteSpace: "nowrap" }}>

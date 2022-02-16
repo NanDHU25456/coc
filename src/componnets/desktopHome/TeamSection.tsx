@@ -80,7 +80,7 @@ const TeamExtraInfo = CustomStyled(Typography)(({ theme }) => ({
   fontFamily: Fonts.Cedarville,
   textAlign: "right",
   margin: 0,
-  width: "45%",
+  width: "100%",
 }));
 
 export const teams: TeamProps[] = [
