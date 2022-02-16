@@ -58,19 +58,18 @@ const StoryCardInfoContainer = CustomStyled(Box)(({ theme }) => ({
 
 const StoryCardExtraContainer = CustomStyled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-300px",
+  top: "-270px",
   left: "8%",
   width: "40%",
   height: "300px",
   zIndex: 1,
   display: "flex",
-  letterSpacing: "-0.011em",
   "& img": {
     height: "60px",
     width: "60px",
     position: "relative",
     top: "250px",
-    left: "-10%",
+    left: "-27%",
     zindex: 2,
     cursor: "pointer",
   },
@@ -80,6 +79,7 @@ const StoryExtraInfo = CustomStyled(Typography)(({ theme }) => ({
   opacity: 0.6,
   color: Colors.YELLOW,
   fontFamily: Fonts.Cedarville,
+  letterSpacing: "-0.011em",
   width: "60%",
 }));
 
@@ -115,8 +115,8 @@ export const storyCards: StoryCard[] = [
     mobileImage: moneyMobile,
     title: "Smokin’",
     title2: "Money",
-    titleStyle2: { top: "-20px", left: "120px" },
-    titleStyle: { top: "-70px", left: "120px" },
+    titleStyle2: { top: "20px", left: "120px" },
+    titleStyle: { top: "-30px", left: "120px" },
     storyCardStyle: { width: "285px", top: "-120px", left: "240px" },
     info: `Before you know it, you’re walking with them too. And you’re dealing
             their crack and stuff. No one gives a flying fuck about money. You
@@ -139,7 +139,7 @@ export const storyCards: StoryCard[] = [
     image: communityImg,
     mobileImage: communityMobile,
     title: "crew af",
-    titleStyle: { top: "-20px", right: "360px" },
+    titleStyle: { top: "5px", right: "360px" },
     storyCardStyle: { width: "285px", top: "-120px", right: "60px" },
     info: `And then stuff gets real. The cats take over the world. Yeah just
             again. It’s a whole cult and shit. You get everyone to vote and all,

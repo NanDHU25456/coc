@@ -1,14 +1,16 @@
-import { Box, Typography } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-import React, { useState } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Ticker from "react-ticker";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import Ticker from "react-ticker";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   width: "110%",
   marginTop: theme.spacing(-30),
+  maxWidth: "110%",
+  overflow: "hidden",
   background: Colors.SECONDARY,
   padding: "2px 0px",
   display: "flex",
@@ -38,15 +40,16 @@ const FeaturedContainer = CustomStyled("div")(({ theme }) => ({
     width: "12px",
     fontSize: "12px",
     marginTop: theme.spacing(1),
-    marginRight: "2px",
+    marginRight: theme.spacing(1.2),
   },
 }));
 
 const FeaturedTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
-  marginRight: "2px",
-  // marginRight: theme.spacing(1),
+  // marginRight: "2px",
+  marginRight: theme.spacing(1.2),
+  whiteSpace: "nowrap",
   textTransform: "uppercase",
   letterSpacing: "-0.011em",
 }));
@@ -133,9 +136,18 @@ export default function RemixSection({
       <RemixGradientContainer />
       <Box height="auto">
         <>
+          {/* <FeaturedContainer style={{ maxWidth: "100%", display: "flex", overflow: "hidden" }}>
+            {new Array(20).fill("empty").map((val) => (
+              <>
+                <FeaturedTitle variant="h6">Featured Artist</FeaturedTitle>
+                <FontAwesomeIcon icon={faCircle} />
+              </>
+            ))}
+          </FeaturedContainer> */}
+
           <Ticker move={false}>
             {({ index }) => (
-              <FeaturedContainer style={{ display: "flex" }}>
+              <FeaturedContainer style={{ margin: "10px", display: "flex" }}>
                 <FeaturedTitle variant="h5">Featured Artist</FeaturedTitle>
                 <FontAwesomeIcon icon={faCircle} />
               </FeaturedContainer>
