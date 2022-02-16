@@ -1,10 +1,10 @@
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Typography } from "@mui/material";
-import React, { useState } from "react";
-import Ticker from "react-ticker";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+import React, { useState } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Ticker from "react-ticker";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const CustomRemixSection = CustomStyled(Box)(({ theme }) => ({
   width: "110%",
@@ -32,20 +32,20 @@ const RemixImageContainer = CustomStyled(Box)(({ theme }) => ({
 
 const FeaturedContainer = CustomStyled("div")(({ theme }) => ({
   display: "flex",
-  marginRight: "8px",
+  marginRight: "2px",
   "& svg": {
     height: "12px",
     width: "12px",
     fontSize: "12px",
     marginTop: theme.spacing(1),
-    marginRight: "8px",
+    marginRight: "2px",
   },
 }));
 
 const FeaturedTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
-  marginRight: "8px",
+  marginRight: "2px",
   // marginRight: theme.spacing(1),
   textTransform: "uppercase",
   letterSpacing: "-0.011em",
