@@ -46,7 +46,7 @@ const ScrollingTitle = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.PRIMARY,
   fontFamily: Fonts.BebasNeue,
   textTransform: "uppercase",
-  fontSize: "1rem",
+  fontSize: "0.5rem",
 }));
 
 export default function MobileFeatureSection() {
