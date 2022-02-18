@@ -1,18 +1,18 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
 import React, { useRef, useState } from "react";
+
+import Efnefknf from "../../assets/images/Efnefknf.png";
 import alcepon from "../../assets/images/alcepon.png";
 import budbug from "../../assets/images/budbug.png";
 import communityPause from "../../assets/images/community-pause.png";
 import communityPlay from "../../assets/images/community-play.png";
 import dashon from "../../assets/images/dashon.png";
 import dev from "../../assets/images/dev.png";
-import Efnefknf from "../../assets/images/Efnefknf.png";
 import gestavo from "../../assets/images/gestavo.png";
 import peblo from "../../assets/images/peblo.png";
-import spud from "../../assets/images/spud.png";
 import playOnlyOneAudio from "../../utils/helper/audio/audioHelper";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-
+import spud from "../../assets/images/spud.png";
 
 export const communityAudio = require("../../assets/audio/teamsong.mpeg");
 
@@ -38,7 +38,8 @@ const TeamTitle = CustomStyled(Typography)(({ theme }) => ({
     fontSize: "1rem",
   },
   [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
+    fontSize: "1.3rem",
+    whiteSpace: "normal",
   },
 }));
 
@@ -50,9 +51,6 @@ const TeamInfo = CustomStyled(Typography)(({ theme }) => ({
   fontSize: "1rem",
   [theme.breakpoints.down("lg")]: {
     fontSize: "0.8rem",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1rem",
   },
 }));
 
@@ -82,7 +80,6 @@ const TeamExtraInfo = CustomStyled(Typography)(({ theme }) => ({
   margin: 0,
   width: "100%",
   letterSpacing: "-0.011em",
-
 }));
 
 export const teams: TeamProps[] = [
@@ -109,6 +106,13 @@ export const teams: TeamProps[] = [
   {
     image: dashon,
     title: "Dashion1703",
+    titleBreak: (
+      <TeamTitle>
+        Dashion
+        <br />
+        1703
+      </TeamTitle>
+    ),
     info: `Fashion the effing world, one design at a time. `,
   },
   {
@@ -169,14 +173,21 @@ export default function TeamSection({
       </Grid>
       <TeamSongContainer>
         <TeamExtraInfo variant="body1">
-          Let me begin,<br /> in the deep end,<br /> with my man{" "}
-          <span style={{ color: Colors.STYLISH_GREEN }}>Kingpin </span> ,<br /> let
-          the storytelling seep in,<br /> pretend it’s the weekend,<br /> of the year{" "}
+          Let me begin,
+          <br /> in the deep end,
+          <br /> with my man{" "}
+          <span style={{ color: Colors.STYLISH_GREEN }}>Kingpin </span> ,<br />{" "}
+          let the storytelling seep in,
+          <br /> pretend it’s the weekend,
+          <br /> of the year{" "}
           <span style={{ color: Colors.STYLISH_GREEN }}> 2030 </span>,<br /> and
-          doping is legal… the end.<br /> sugar’s sold in the grocery stores,<br /> and
-          nobody’s gotta wriggle down a forest no more,<br /> there’s no gun shots,<br />
-          and we’re not going to war with any dogs,<br /> they even sell shrooms in
-          the store,{" "}<br />
+          doping is legal… the end.
+          <br /> sugar’s sold in the grocery stores,
+          <br /> and nobody’s gotta wriggle down a forest no more,
+          <br /> there’s no gun shots,
+          <br />
+          and we’re not going to war with any dogs,
+          <br /> they even sell shrooms in the store, <br />
           <span style={{ color: Colors.STYLISH_GREEN }}>
             {" "}
             everything's chill
@@ -206,14 +217,27 @@ interface TeamProps {
   title: string;
   info: string;
   height?: string;
+  titleBreak?: JSX.Element;
 }
 
-export const Team = ({ image, title, info, height = "100%" }: TeamProps) => {
+export const Team = ({
+  image,
+  title,
+  info,
+  height = "100%",
+  titleBreak,
+}: TeamProps) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Grid item md={3} xs={12}>
       <Box height={height} style={{ background: Colors.SECONDARY }} padding={3}>
         <img style={{ width: "100%" }} src={image} alt="team" />
-        <TeamTitle>{title}</TeamTitle>
+        {isSmallScreen && titleBreak ? (
+          titleBreak
+        ) : (
+          <TeamTitle>{title}</TeamTitle>
+        )}
         <TeamInfo>{info}</TeamInfo>
       </Box>
     </Grid>

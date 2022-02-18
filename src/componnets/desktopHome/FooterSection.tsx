@@ -25,7 +25,8 @@ const FooterCreditSection = CustomStyled(Box)(({ theme }) => ({
   justifyContent: "flex-end",
   width: "300px",
   [theme.breakpoints.down("md")]: {
-    right: "60px",
+    right: "50px",
+    maxWidth: "55%",
   },
 }));
 
@@ -49,10 +50,9 @@ export default function FooterSection() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      height="70px"
+      height={"70px"}
       overflow="hidden"
       paddingTop={isLargeScreen ? 10 : 0}
-      paddingBottom={isLargeScreen ? 0 : 8}
       position="relative"
     >
       <CustomFooterSection>
