@@ -115,7 +115,7 @@ export default function CrackHouseSection() {
             <span style={{ color: "rgba(255, 255, 255, 0.6)" }}>
               MINT DATE:
             </span>{" "}
-            TBD
+            10/3/2022
           </CrackDesc>
         </CracDescContainer>
       </CarckHosueSection>

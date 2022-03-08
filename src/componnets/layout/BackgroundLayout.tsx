@@ -1,12 +1,11 @@
-import { Box, IconButton, Typography } from "@mui/material";
-import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
-import React, { PropsWithChildren, useState } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FullWidthPage from "./FullWidthPage";
-import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
-import catLogo from "../../assets/images/cat-logo.png";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Box, IconButton, Typography } from "@mui/material";
+import React, { PropsWithChildren, useState } from "react";
+import catLogo from "../../assets/images/cat-logo.png";
+import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
+import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+import FullWidthPage from "./FullWidthPage";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
@@ -112,7 +111,7 @@ export default function BackgroundLayout({
               </SelfContainer>
               <SelfContainer
                 onClick={() => {
-                  window.open("https://twitter.com/catsoncrack_");
+                  window.open("https://twitter.com/catsoncrack_2");
                 }}
                 height={"55px"}
                 width="55px"
@@ -120,7 +119,7 @@ export default function BackgroundLayout({
               >
                 <Icon
                   onClick={() =>
-                    window.open("https://twitter.com/catsoncrack_")
+                    window.open("https://twitter.com/catsoncrack_2")
                   }
                 >
                   <FontAwesomeIcon icon={faTwitter} />

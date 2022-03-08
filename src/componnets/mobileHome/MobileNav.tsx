@@ -36,7 +36,9 @@ const MobileNav = ({ showDiscord, setShowDiscord }: MobileNavProps) => {
           >
             <GameIcon />
           </Icon>
-          <Icon onClick={() => window.open("https://twitter.com/catsoncrack_")}>
+          <Icon
+            onClick={() => window.open("https://twitter.com/catsoncrack_2")}
+          >
             <FontAwesomeIcon icon={faTwitter} />
           </Icon>
           {showDiscord && (

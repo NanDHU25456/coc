@@ -79,7 +79,7 @@ export default function MobileCrackHouseSection() {
           MINT DATE :{" "}
         </CrackDesc>
         <CrackDesc style={{ marginLeft: "8px" }} variant="h6">
-          TBD
+          10/3/2022
         </CrackDesc>
       </Box>
     </CrackHouseSection>
