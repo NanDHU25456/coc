@@ -1,11 +1,13 @@
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, IconButton, Typography } from "@mui/material";
-import React, { PropsWithChildren, useState } from "react";
-import catLogo from "../../assets/images/cat-logo.png";
-import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import { Colors, CustomStyled, Fonts } from "../../utils/styles/DefaultTheme";
+import React, { PropsWithChildren, useState } from "react";
+
+import Countdown from "react-countdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullWidthPage from "./FullWidthPage";
+import { ReactComponent as GameIcon } from "../../assets/images/icons/game.svg";
+import catLogo from "../../assets/images/cat-logo.png";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Container = CustomStyled(Box)(({ theme }) => ({
   background: Colors.PRIMARY,
@@ -62,8 +64,56 @@ export const DiscordText = CustomStyled(Typography)(({ theme }) => ({
   color: Colors.SECONDARY,
 }));
 
+export const MintBtn = CustomStyled(Button)(({ theme }) => ({
+  height: "54px",
+  width: "245px",
+  padding: "10px 25px",
+  background:
+    "linear-gradient(87.22deg, #FF00C7 5.62%, #00FFD1 50.96%, #FFF500 98.22%)",
+  border: 0,
+  marginRight: theme.spacing(2),
+  "&:hover": {
+    background:
+      "linear-gradient(87.22deg, #FF00C7 5.62%, #00FFD1 50.96%, #FFF500 98.22%)",
+  },
+}));
+
+export const MintTimer = CustomStyled(Button)(({ theme }) => ({
+  height: "54px",
+  width: "245px",
+  padding: "10px 25px",
+  background: Colors.blackBackground,
+  border: 0,
+  marginRight: theme.spacing(2),
+  fontFamily: Fonts.BebasNeue,
+  fontSize: "32px",
+  color: Colors.blackBackground,
+  textTransform: "uppercase",
+  "&:hover": {
+    background: Colors.blackBackground,
+  },
+}));
+
+export const GradientText = CustomStyled(Typography)(({ theme }) => ({
+  fontFamily: Fonts.BebasNeue,
+  fontSize: "32px",
+  background:
+    " linear-gradient(87.22deg, #FF00C7 5.62%, #00FFD1 50.96%, #FFF500 98.22%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  textTransform: "uppercase",
+}));
+
 interface BackgroundLayoutProps {
   showOverlay: boolean;
+}
+
+interface time {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
 }
 
 export default function BackgroundLayout({
@@ -71,7 +121,34 @@ export default function BackgroundLayout({
   showOverlay,
 }: PropsWithChildren<{}> & BackgroundLayoutProps) {
   const [showDiscord, setShowDiscord] = useState(false);
-
+  const mintStartTime = parseInt(process.env.REACT_APP_MINT_TIMER!);
+  const renderer = ({ hours, minutes, seconds, completed, days }: time) => {
+    if (completed) {
+      // Render a completed state
+      return (
+        <MintBtn>
+          <Typography
+            style={{
+              fontFamily: Fonts.BebasNeue,
+              fontSize: "32px",
+              color: Colors.blackBackground,
+            }}
+          >
+            MINT IS LIVE!!
+          </Typography>
+        </MintBtn>
+      );
+    } else {
+      // Render a countdown
+      return (
+        <MintTimer>
+          <GradientText>
+            MINT IN {hours}:{minutes}:{seconds}
+          </GradientText>
+        </MintTimer>
+      );
+    }
+  };
   return (
     <FullWidthPage>
       <Container>
@@ -104,6 +181,7 @@ export default function BackgroundLayout({
               </SelfContainer>
             </Box>
             <Box position="relative" display="flex">
+              <Countdown date={mintStartTime} renderer={renderer} />
               <SelfContainer height={"55px"} width="55px" padding={1}>
                 <Icon onClick={() => setShowDiscord(!showDiscord)}>
                   <GameIcon />
@@ -111,7 +189,7 @@ export default function BackgroundLayout({
               </SelfContainer>
               <SelfContainer
                 onClick={() => {
-                  window.open("https://twitter.com/catsoncrack_2");
+                  window.open("https://twitter.com/CetsOnCreck");
                 }}
                 height={"55px"}
                 width="55px"
@@ -119,7 +197,7 @@ export default function BackgroundLayout({
               >
                 <Icon
                   onClick={() =>
-                    window.open("https://twitter.com/catsoncrack_2")
+                    window.open(" https://twitter.com/CetsOnCreck")
                   }
                 >
                   <FontAwesomeIcon icon={faTwitter} />
